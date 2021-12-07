@@ -21,11 +21,8 @@ h1 {
   --dark: #24221c;
 }
 
-* {
-  background: #fafbf9;
-}
-
 body {
+  background: #fafbf9;
   margin: 0;
 }
 
@@ -41,6 +38,7 @@ nav {
 
 .nav-item {
   display: inline-flex;
+  justify-content: flex-end;
 }
 .nav-brand {
   margin-left: 1rem;
@@ -48,12 +46,25 @@ nav {
 
 .nav-menu {
   width: 450px;
-  justify-content: space-evenly;
+}
+
+.nav-menu h1 {
+  padding-right: 1rem;
+  color: var(--secondary);
 }
 
 .nav-menu-choice {
   display: inline-flex;
   align-items: center;
+  padding: 0 1rem;
+  color: var(--secondary);
+  /* color: var(--tertiary); */
+}
+
+.nav-menu-choice:hover {
+  background: var(--secondary);
+  color: var(--tertiary);
+  /* color: var(--light); */
 }
 
 .nav-logo-design {
