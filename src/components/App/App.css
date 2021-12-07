@@ -1,0 +1,79 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--dark);
+}
+
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* COLORS */
+:root {
+  --colored-bg: #fafbf9;
+  --primary: #483e37;
+  --secondary: #6c6753;
+  --tertiary: #cad3ae;
+  --light: #fff;
+  --dark: #24221c;
+}
+
+* {
+  background: #fafbf9;
+}
+
+body {
+  margin: 0;
+}
+
+/* NAVBAR */
+nav {
+  background: var(--light);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.nav-item {
+  display: inline-flex;
+}
+.nav-brand {
+  margin-left: 1rem;
+}
+
+.nav-menu {
+  width: 450px;
+  justify-content: space-evenly;
+}
+
+.nav-menu-choice {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-logo-design {
+  width: 3rem;
+}
+
+.nav-logo-brand {
+  width: 18rem;
+}
+
+.nav-ico {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.nav-shadow {
+  height: 1px;
+  margin-top: 0;
+  padding: 0;
+  background-color: var(--tertiary);
+  /* border: 0; */
+}
