@@ -3,6 +3,8 @@ import logoBrand from '../../assets/HRnet_logo-brand.svg';
 import icoList from '../../assets/ico-list.svg';
 import icoAdd from '../../assets/ico-user-add.svg';
 
+import './navbar.css'
+
 export default function Navbar() {
   return (
     <>
