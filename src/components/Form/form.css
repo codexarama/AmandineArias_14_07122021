@@ -1,0 +1,65 @@
+/* FORM */
+
+#add-employee-form {
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  padding: 2.5rem 5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--tertiary) 0 0 5px 1px;
+}
+
+.add-employee-ico {
+  width: 2.5rem;
+  display: block;
+  margin: 0 auto 2.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper label {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.input-wrapper input {
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid var(--tertiary);
+  font-size: 1rem;
+}
+
+.input-wrapper small {
+  position: absolute;
+  top: 3.5rem;
+  color: var(--error);
+}
+
+.input-alert {
+  height: 3rem;
+  margin: 0 auto;
+}
+
+.input-alert--msg {
+  line-height: 3rem;
+  color: var(--error);
+}
+
+.add-employee-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--tertiary);
+  color: #fff;
+}
