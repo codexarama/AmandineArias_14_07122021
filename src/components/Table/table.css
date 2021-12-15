@@ -5,7 +5,7 @@
 
 #employees th {
   padding: 5px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--light);
   /* background-color: var(--tertiary); */
 }
@@ -23,6 +23,7 @@
   background-color: var(--table-row);
 }
 
-#employees tr:hover {
+#employees tr:hover,
+#employees tr:focus {
   background-color: var(--table-hover);
 }

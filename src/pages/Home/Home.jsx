@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="add-employee">
       <section className="add-employee-content">
-        <h1>Add an employee</h1>
+        <h2>Add an employee</h2>
         <Form />
       </section>
     </main>

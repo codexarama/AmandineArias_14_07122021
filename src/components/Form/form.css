@@ -3,7 +3,7 @@
 #add-employee-form {
   flex-direction: column;
   width: 500px;
-  margin: auto;
+  margin: 0 auto 2rem;
   padding: 2.5rem 5rem;
   background: white;
   border-radius: 0.5rem;
