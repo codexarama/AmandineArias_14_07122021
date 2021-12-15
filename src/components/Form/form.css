@@ -17,6 +17,7 @@
 }
 
 .input-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -24,6 +25,10 @@
 }
 
 .input-wrapper label {
+  /* position: absolute;
+  top: 0;
+  pointer-events: none;
+  transition: 0.2s ease-in; */
   font-weight: 700;
   color: var(--secondary);
 }
@@ -33,6 +38,16 @@
   border: none;
   border-bottom: 2px solid var(--tertiary);
   font-size: 1rem;
+}
+
+/* .input-wrapper input:focus~label{
+  position: absolute;
+  top: -30px;
+  left: 0;
+} */
+
+.input-wrapper input[type=date] {
+  color: var(--disabled);
 }
 
 .input-wrapper small {
@@ -53,13 +68,21 @@
 
 .add-employee-button {
   display: block;
-  width: 100%;
+  margin: 2rem auto 0;
+  width: 30%;
   padding: 10px;
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 1rem;
   border: none;
   border-radius: 0.5rem;
   background-color: var(--tertiary);
   color: #fff;
+}
+
+.add-employee-button:disabled,
+.add-employee-button[disabled],
+.add-employee-button:disabled:hover,
+.add-employee-button[disabled]:hover {
+  background-color: var(--disabled);
+  cursor: not-allowed;
 }

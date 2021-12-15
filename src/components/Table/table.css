@@ -1,0 +1,28 @@
+#employees {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#employees th {
+  padding: 5px;
+  background-color: var(--primary);
+  color: var(--light);
+  /* background-color: var(--tertiary); */
+}
+
+#employees th,
+#employees td {
+  border: 2px solid var(--light);
+}
+
+#employees td {
+  padding: 2px 0px 2px 10px;
+}
+
+#employees tr:nth-child(even) {
+  background-color: var(--table-row);
+}
+
+#employees tr:hover {
+  background-color: var(--table-hover);
+}

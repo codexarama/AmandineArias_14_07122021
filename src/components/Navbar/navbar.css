@@ -12,8 +12,17 @@ nav {
     display: inline-flex;
     justify-content: flex-end;
   }
+
   .nav-brand {
     margin-left: 1rem;
+  }
+
+  .nav-logo-design {
+    width: 2.5rem;
+  }
+
+  .nav-logo-brand {
+    width: 15rem;
   }
 
   .nav-menu {
@@ -26,37 +35,28 @@ nav {
   }
 
   .nav-menu-choice {
+    width: 90px;
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
     color: var(--secondary);
-    /* color: var(--tertiary); */
   }
 
   .nav-menu-choice:hover {
     background: var(--secondary);
     color: var(--tertiary);
-    /* color: var(--light); */
-  }
-
-  .nav-logo-design {
-    width: 3rem;
-  }
-
-  .nav-logo-brand {
-    width: 18rem;
   }
 
   .nav-ico {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 0.5rem;
   }
 
   .nav-shadow {
     height: 1px;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
     background-color: var(--tertiary);
-    /* border: 0; */
   }

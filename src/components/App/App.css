@@ -19,7 +19,12 @@ h1 {
   --tertiary: #cad3ae;
   --light: #fff;
   --dark: #24221c;
-  --error: #f95
+  --error: #f95;
+  --disabled: #cfcfcf;
+  --table-row: #eef1e3;
+  --table-hover: #cad3ae;
+  /* --table-row: #eeece3; */
+  /* --table-row: #f0f7e8; */
 }
 
 body {
@@ -27,9 +32,17 @@ body {
   margin: 0;
 }
 
+h1 {
+  text-align: center;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+a {
+  text-decoration: none;
 }
