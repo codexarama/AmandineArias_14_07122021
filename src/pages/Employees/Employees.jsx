@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import Table from '../../components/Table/Table';
 
 export default function Employees() {
+  useEffect(() => {
+    document.title = 'HRnet | Employees';
+  });
+
   return (
-    <main className='employees-list' >
+    <main className="employees-list">
       <h1>Employees list</h1>
-        <Table />
+      <Table />
     </main>
   );
 }
@@ -12,7 +17,6 @@ export default function Employees() {
 // import Table from '../../components/Table/Table';
 // import employees from '../../data/MOCK_DATA.json';
 // import {title} from '../../data/tableTitles';
-
 
 // export default function Employees() {
 //   console.log(title[0]);
