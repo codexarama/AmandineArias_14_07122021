@@ -1,15 +1,79 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import icoAdd from '../../assets/ico-user-add.svg';
-
 import './form.css';
 
 export default function Form() {
+  const initialState = {
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    startDate: '',
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    department: '',
+  };
+
+  const [employee, setEmployee] = useState(initialState);
+
+  const handleChange = (e) => {
+    setEmployee({ ...employee, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newEmployee = {
+      firstName: employee.firstName,
+      lastName: employee.lastName,
+      dateOfBirth: employee.dateOfBirth,
+      startDate: employee.startDate,
+      street: employee.street,
+      city: employee.city,
+      state: employee.state,
+      zipCode: employee.zipCode,
+      department: employee.department,
+    };
+
+    console.log({ ...newEmployee });
+    console.log(newEmployee.id);
+    localStorage.setItem('newEmployee', JSON.stringify(newEmployee));
+  };
+
+  const {
+    firstName,
+    lastName,
+    dateOfBirth,
+    startDate,
+    street,
+    city,
+    state,
+    zipCode,
+    department,
+  } = employee;
+
+  const btn =
+    firstName === '' ||
+    lastName === '' ||
+    dateOfBirth === '' ||
+    startDate === '' ||
+    street === '' ||
+    city === '' ||
+    state === '' ||
+    zipCode === '' ||
+    department === '' ? (
+      <button type="submit" className="add-employee-button" disabled>
+        Add an employee
+      </button>
+    ) : (
+      <button type="submit" className="add-employee-button">
+        Add an employee
+      </button>
+    );
+
   return (
-    <form
-      action=""
-      id="add-employee-form"
-      // onSubmit={handleSubmit}
-    >
+    <form action="" id="add-employee-form" onSubmit={handleSubmit}>
       <img
         className="add-employee-ico"
         src={icoAdd}
@@ -17,43 +81,101 @@ export default function Form() {
       />
 
       <div className="input-wrapper">
-        <label htmlFor="email">Email</label>
+        <label htmlFor="firstName">First name</label>
         <input
           type="text"
-          id="email"
-          //   value={email}
-          //   onChange={handleChangeEmail}
-          autoComplete="username"
+          id="firstName"
+          value={firstName}
+          onChange={handleChange}
+          autoComplete="off"
         />
-        {/* {noEmail && <small>Email is required</small>} */}
-        {/* {submitted && !email && <small>Email is required</small>} */}
       </div>
       <div className="input-wrapper">
-        <label htmlFor="password">Password</label>
+        <label htmlFor="lastName">Last name</label>
         <input
-          type="password"
-          id="password"
-          //   value={password}
-          //   onChange={handleChangePassword}
-          autoComplete="current-password"
+          type="text"
+          id="lastName"
+          value={lastName}
+          onChange={handleChange}
+          autoComplete="off"
         />
-        {/* {noPassword && <small>Password is required</small>} */}
-        {/* {submitted && !password && <small>Password is required</small>} */}
       </div>
-      <div className="input-remember">
+      <div className="input-wrapper">
+        <label htmlFor="dateOfBirth">Date of Birth</label>
         <input
-          type="checkbox"
-          id="remember-me"
-          //   checked={rememberMe}
-          //   onChange={handleChangeRememberMe}
+          type="date"
+          id="dateOfBirth"
+          value={dateOfBirth}
+          onChange={handleChange}
+          autoComplete="off"
         />
-        <label htmlFor="remember-me">Remember me</label>
       </div>
-      <input
+      <div className="input-wrapper">
+        <label htmlFor="startDate">Start Date</label>
+        <input
+          type="date"
+          id="startDate"
+          value={startDate}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="street">Street</label>
+        <input
+          type="text"
+          id="street"
+          value={street}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="city">City</label>
+        <input
+          type="text"
+          id="city"
+          value={city}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="state">State</label>
+        <input
+          type="text"
+          id="state"
+          value={state}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="zipCode">Zip Code</label>
+        <input
+          type="text"
+          id="zipCode"
+          value={zipCode}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="department">Department</label>
+        <input
+          type="text"
+          id="department"
+          value={department}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
+      {btn}
+      {/* <input
         type="submit"
         value="Add employee"
         className="add-employee-button"
-      />
+      /> */}
       <section className="input-alert">
         {/* {wrongEntries &&
             (
