@@ -3,9 +3,14 @@ import logoBrand from '../../assets/HRnet_logo-brand.svg';
 import icoList from '../../assets/ico-list.svg';
 import icoAdd from '../../assets/ico-user-add.svg';
 
-import './navbar.css'
+import { useLocation, Link } from 'react-router-dom';
+
+import './navbar.css';
 
 export default function Navbar() {
+  const path = useLocation().pathname;
+  // console.log(path);
+
   return (
     <>
       <nav>
@@ -23,25 +28,28 @@ export default function Navbar() {
         </div>
         <div className="nav-item nav-menu">
           <h1>HRnet Employees</h1>
-          <div className="nav-menu-choice">
-            <img
-              className="nav-ico"
-              src={icoList}
-              alt="Health Wealth logo brand name"
-            />
-            <span>Current</span>
-          </div>
-          <div className="nav-menu-choice">
-            <img
-              className="nav-ico"
-              src={icoAdd}
-              alt="Health Wealth logo brand name"
-            />
-            <span>Create</span>
-          </div>
+          {path === '/' ? (
+            <Link to='/employees' className="nav-menu-choice">
+              <img
+                className="nav-ico"
+                src={icoList}
+                alt="Health Wealth logo brand name"
+              />
+              <span>Current</span>
+            </Link>
+          ) : (
+            <Link to='/' className="nav-menu-choice">
+              <img
+                className="nav-ico"
+                src={icoAdd}
+                alt="Health Wealth logo brand name"
+              />
+              <span>Create</span>
+            </Link>
+          )}
         </div>
       </nav>
-      <hr className='nav-shadow' />
+      <hr className="nav-shadow" />
     </>
   );
 }
