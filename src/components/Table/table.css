@@ -1,18 +1,27 @@
+h3 {
+  color: var(--tertiary);
+  text-shadow: 0 0 0.5px var(--secondary);
+}
 #employees {
   border-collapse: collapse;
   width: 100%;
+}
+
+#employees thead :nth-child(2) > * {
+  /* font-weight: normal; */
+  color: var(--tertiary);
+
 }
 
 #employees th {
   padding: 5px;
   background-color: var(--secondary);
   color: var(--light);
-  /* background-color: var(--tertiary); */
 }
 
 #employees th,
 #employees td {
-  border: 2px solid var(--light);
+  border: 1px solid var(--light);
 }
 
 #employees td {
@@ -25,5 +34,5 @@
 
 #employees tr:hover,
 #employees tr:focus {
-  background-color: var(--table-hover);
+  background-color: var(--tertiary);
 }
