@@ -1,18 +1,27 @@
+h3 {
+  color: var(--tertiary);
+  text-shadow: 0 0 0.5px var(--secondary);
+}
 #employees {
   border-collapse: collapse;
   width: 100%;
 }
 
+#employees thead :nth-child(2) > * {
+  /* font-weight: normal; */
+  color: var(--tertiary);
+
+}
+
 #employees th {
   padding: 5px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--light);
-  /* background-color: var(--tertiary); */
 }
 
 #employees th,
 #employees td {
-  border: 2px solid var(--light);
+  border: 1px solid var(--light);
 }
 
 #employees td {
@@ -23,6 +32,19 @@
   background-color: var(--table-row);
 }
 
-#employees tr:hover {
-  background-color: var(--table-hover);
+#employees tr:hover,
+#employees tr:focus {
+  background-color: var(--tertiary);
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search input {
+  margin: 1rem 0 1rem 0.5rem;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
 }

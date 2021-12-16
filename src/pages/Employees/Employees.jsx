@@ -8,7 +8,7 @@ export default function Employees() {
 
   return (
     <main className="employees-list">
-      <h1>Employees list</h1>
+      <h2>Employees list</h2>
       <Table />
     </main>
   );
