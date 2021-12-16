@@ -1,4 +1,4 @@
-import { useTable } from 'react-table';
+import { useTable, useSortBy } from 'react-table';
 import React, { useMemo } from 'react';
 
 import { TABLE_COLUMNS } from './tableColumns';
@@ -12,10 +12,13 @@ export default function Table() {
   const data = useMemo(() => EMPLOYEE_LIST, []);
 
   // table instance
-  const tableInstance = useTable({
-    columns: columns,
-    data: data,
-  });
+  const tableInstance = useTable(
+    {
+      columns: columns,
+      data: data,
+    },
+    useSortBy
+  );
 
   // table props to define table instance
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -26,7 +29,12 @@ export default function Table() {
     return (
       <tr {...headerGroup.getHeaderGroupProps()}>
         {headerGroup.headers.map((column) => (
-          <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+          <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+            {column.render('Header')}
+            <span>
+              {column.isSorted ? (column.isSortedDesc ? ' ▾' : ' ▴') : ''}{' '}
+            </span>
+          </th>
         ))}
       </tr>
     );
@@ -50,7 +58,9 @@ export default function Table() {
       {/* <h3>{`${employees.length} currently employed`}</h3> */}
       <table id="employees" {...getTableProps()}>
         <thead>{theadContent}</thead>
-        <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
+        <tbody {...getTableBodyProps()}>
+          {tbodyContent}
+        </tbody>
       </table>
     </section>
   );
