@@ -1,8 +1,10 @@
-import { useTable, useSortBy } from 'react-table';
+import { useTable, useSortBy, useGlobalFilter } from 'react-table';
 import React, { useMemo } from 'react';
 
 import { TABLE_COLUMNS } from './tableColumns';
 import EMPLOYEE_LIST from '../../data/MOCK_DATA.json';
+
+import TableFilter from './TableFilter';
 
 import './table.css';
 
@@ -17,12 +19,20 @@ export default function Table() {
       columns: columns,
       data: data,
     },
+    useGlobalFilter,
     useSortBy
   );
 
   // table props to define table instance
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    setGlobalFilter,
+  } = tableInstance;
 
   // table head content mapping for rendering
   const theadContent = headerGroups.map((headerGroup) => {
@@ -52,15 +62,16 @@ export default function Table() {
     );
   });
 
+  // handle table state for filtering data with search bar component
+  const { globalFilter } = state;
+
   return (
     <section>
       <h3>{`${EMPLOYEE_LIST.length} currently employed`}</h3>
-      {/* <h3>{`${employees.length} currently employed`}</h3> */}
+      <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table id="employees" {...getTableProps()}>
         <thead>{theadContent}</thead>
-        <tbody {...getTableBodyProps()}>
-          {tbodyContent}
-        </tbody>
+        <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
       </table>
     </section>
   );
