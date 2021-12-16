@@ -1,122 +1,57 @@
-// import React from 'react';
-// import titles from '../../data/tableTitles.json';
-// import TableHead from './TableHead';
-// import employeeList from '../../data/MOCK_DATA.json';
-// import TableBody from './TableBody';
-// import './table.css';
+import { useTable } from 'react-table';
+import React, { useMemo } from 'react';
 
-// export default function Table() {
-//   return (
-//     <table id="employees">
-//       {titles.map((title) => (
-//         <TableHead title={title} />
-//       ))}
-//       {employeeList.map((employee) => (
-//         <TableBody employee={employee} />
-//       ))}
-//     </table>
-//   );
-// }
+import { TABLE_COLUMNS } from './tableColumns';
+import EMPLOYEE_LIST from '../../data/MOCK_DATA.json';
 
-import React from 'react';
-import employeeList from '../../data/MOCK_DATA.json';
-import titles from '../../data/tableTitles.json';
 import './table.css';
 
 export default function Table() {
-  // const newEmployee = localStorage.getItem('newEmployee');
-  const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
-  console.log(newEmployee);
-  employeeList.push((newEmployee));
-  
+  // useMemo hook to avoid re-rendering until the data changes
+  const columns = useMemo(() => TABLE_COLUMNS, []);
+  const data = useMemo(() => EMPLOYEE_LIST, []);
+
+  // table instance
+  const tableInstance = useTable({
+    columns: columns,
+    data: data,
+  });
+
+  // table props to define table instance
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
+
+  // table head content mapping for rendering
+  const theadContent = headerGroups.map((headerGroup) => {
+    return (
+      <tr {...headerGroup.getHeaderGroupProps()}>
+        {headerGroup.headers.map((column) => (
+          <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+        ))}
+      </tr>
+    );
+  });
+
+  // table body content mapping for rendering
+  const tbodyContent = rows.map((row) => {
+    prepareRow(row);
+    return (
+      <tr {...row.getRowProps()}>
+        {row.cells.map((cell) => {
+          return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+        })}
+      </tr>
+    );
+  });
+
   return (
-    <table id="employees">
-      <thead>
-        {titles.map((title, index) => (
-          <tr key={index}>
-            <th>{title.firstName}</th>
-            <th>{title.lastName}</th>
-            <th>{title.dateOfBirth}</th>
-            <th>{title.startDate}</th>
-            <th colSpan="4">{title.address}</th>
-            <th>{title.department}</th>
-          </tr>
-        ))}
-      </thead>
-      <tbody>
-        {employeeList.map((employee, index) => (
-          <tr key={index}>
-            <td>{employee.first_name}</td>
-            <td>{employee.last_name}</td>
-            <td>{employee.date_of_birth}</td>
-            <td>{employee.start_date}</td>
-            <td>{employee.street}</td>
-            <td>{employee.city}</td>
-            <td>{employee.state}</td>
-            <td>{employee.zip_code}</td>
-            {/* <td>{`${employee.street}, ${employee.city}, ${employee.state} | ${employee.zip_code}`}</td> */}
-            <td>{employee.department}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <section>
+      <h3>{`${EMPLOYEE_LIST.length} currently employed`}</h3>
+      {/* <h3>{`${employees.length} currently employed`}</h3> */}
+      <table id="employees" {...getTableProps()}>
+        <thead>{theadContent}</thead>
+        <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
+      </table>
+    </section>
   );
 }
-
-// import React, { useState } from 'react';
-// import data from '../../data/MOCK_DATA.json';
-// import titles from '../../data/tableTitles.json';
-// import './table.css';
-
-// export default function Table() {
-//   // let [employees, setEmployees] = useState(data);
-//   const [employees, setEmployees] = useState(data);
-//   const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
-
-//   // console.log(newEmployee);
-
-//   // employees = [...employees, newEmployee];
-//   // setEmployees(employees);
-
-//   // const newEmployees = [...employees, newEmployee];
-//   // setEmployees(newEmployees);
-
-//   // const updateEmployees = employees.push(newEmployee)
-//   // console.log(updateEmployees);
-//   // setEmployees(updateEmployees)
-
-//   employees.push(newEmployee)
-
-//   return (
-//     <table id="employees">
-//       <thead>
-//       {titles.map((title, index) => (
-//           <tr>
-//             <th>{title.firstName}</th>
-//             <th>{title.lastName}</th>
-//             <th>{title.dateOfBirth}</th>
-//             <th>{title.startDate}</th>
-//             <th colSpan="4">{title.address}</th>
-//             <th>{title.department}</th>
-//           </tr>
-//         ))}
-//       </thead>
-//       <tbody>
-//         {employees.map((employee, key) => (
-//   <tr>
-//     <td>{employee.first_name}</td>
-//     <td>{employee.last_name}</td>
-//     <td>{employee.date_of_birth}</td>
-//     <td>{employee.start_date}</td>
-//     <td>{employee.street}</td>
-//     <td>{employee.city}</td>
-//     <td>{employee.state}</td>
-//     <td>{employee.zip_code}</td>
-//     {/* <td>{`${employee.street}, ${employee.city}, ${employee.state} | ${employee.zip_code}`}</td> */}
-//     <td>{employee.department}</td>
-//   </tr>
-// ))}
-//       </tbody>
-//     </table>
-//   );
-// }
