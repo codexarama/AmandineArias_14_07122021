@@ -1,4 +1,9 @@
-import { useTable, useSortBy, useGlobalFilter } from 'react-table';
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  usePagination,
+} from 'react-table';
 import React, { useMemo } from 'react';
 
 import { TABLE_COLUMNS } from './tableColumns';
@@ -20,7 +25,8 @@ export default function Table() {
       data: data,
     },
     useGlobalFilter,
-    useSortBy
+    useSortBy,
+    usePagination
   );
 
   // table props to define table instance
@@ -28,7 +34,15 @@ export default function Table() {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    page,
+    nextPage,
+    canNextPage,
+    previousPage,
+    canPreviousPage,
+    pageOptions,
+    gotoPage,
+    pageCount,
+    setPageSize,
     prepareRow,
     state,
     setGlobalFilter,
@@ -51,7 +65,7 @@ export default function Table() {
   });
 
   // table body content mapping for rendering
-  const tbodyContent = rows.map((row) => {
+  const tbodyContent = page.map((row) => {
     prepareRow(row);
     return (
       <tr {...row.getRowProps()}>
@@ -63,7 +77,7 @@ export default function Table() {
   });
 
   // handle table state for filtering data with search bar component
-  const { globalFilter } = state;
+  const { globalFilter, pageIndex, pageSize } = state;
 
   return (
     <section>
@@ -73,6 +87,49 @@ export default function Table() {
         <thead>{theadContent}</thead>
         <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
       </table>
+      <div className="table-navigation">
+        <select
+          id=""
+          value={pageSize}
+          onChange={(e) => setPageSize(Number(e.target.value))}
+        >
+          {[10, 25, 50, 100].map((pageSize) => (
+            <option key={pageSize} value={pageSize}>
+              Show {pageSize} data{' '}
+            </option>
+          ))}
+        </select>
+        <span>
+          Go to page{' '}
+          <input
+            type="number"
+            className="go-to-page"
+            defaultValue={pageIndex + 1}
+            onChange={(e) => {
+              const pageNumber = e.target.value ? Number(e.target.value) : 0;
+              gotoPage(pageNumber);
+            }}
+          />
+        </span>
+        <span>
+          Page{' '}
+          <strong>
+            {pageIndex + 1} of {pageOptions.length}
+          </strong>
+        </span>
+        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+          {'<<'}
+        </button>
+        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+          ◀ Previous
+        </button>
+        <button onClick={() => nextPage()} disabled={!canNextPage}>
+          Next ▶
+        </button>
+        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+          {'>>'}
+        </button>
+      </div>
     </section>
   );
 }
