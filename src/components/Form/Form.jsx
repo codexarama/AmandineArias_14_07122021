@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import icoAdd from '../../assets/ico-user-add.svg';
 import './form.css';
 
@@ -15,30 +15,29 @@ export default function Form() {
     department: '',
   };
 
-  const [employee, setEmployee] = useState(initialState);
+  const [addEmployee, setAddEmployee] = useState(initialState);
 
   const handleChange = (e) => {
-    setEmployee({ ...employee, [e.target.id]: e.target.value });
+    setAddEmployee({ ...addEmployee, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newEmployee = {
-      firstName: employee.firstName,
-      lastName: employee.lastName,
-      dateOfBirth: employee.dateOfBirth,
-      startDate: employee.startDate,
-      street: employee.street,
-      city: employee.city,
-      state: employee.state,
-      zipCode: employee.zipCode,
-      department: employee.department,
+      firstName: addEmployee.firstName,
+      lastName: addEmployee.lastName,
+      dateOfBirth: addEmployee.dateOfBirth,
+      startDate: addEmployee.startDate,
+      street: addEmployee.street,
+      city: addEmployee.city,
+      state: addEmployee.state,
+      zipCode: addEmployee.zipCode,
+      department: addEmployee.department,
     };
 
     console.log({ ...newEmployee });
-    console.log(newEmployee.id);
-    localStorage.setItem('newEmployee', JSON.stringify(newEmployee));
+    // localStorage.setItem('newEmployee', JSON.stringify(newEmployee));
   };
 
   const {
@@ -51,7 +50,7 @@ export default function Form() {
     state,
     zipCode,
     department,
-  } = employee;
+  } = addEmployee;
 
   const btn =
     firstName === '' ||
@@ -171,11 +170,6 @@ export default function Form() {
         />
       </div>
       {btn}
-      {/* <input
-        type="submit"
-        value="Add employee"
-        className="add-employee-button"
-      /> */}
       <section className="input-alert">
         {/* {wrongEntries &&
             (
