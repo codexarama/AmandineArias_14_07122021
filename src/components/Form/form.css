@@ -47,7 +47,7 @@
 } */
 
 .input-wrapper input[type=date] {
-  color: var(--disabled);
+  color: var(--tertiary);
 }
 
 .input-wrapper small {
@@ -84,5 +84,6 @@
 .add-employee-button:disabled:hover,
 .add-employee-button[disabled]:hover {
   background-color: var(--disabled);
+  color: var(--tertiary);
   cursor: not-allowed;
 }

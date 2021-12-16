@@ -2,6 +2,21 @@ h3 {
   color: var(--tertiary);
   text-shadow: 0 0 0.5px var(--secondary);
 }
+
+/* SEARCH BAR */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search input {
+  margin: 1rem 0 1rem 0.5rem;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
+}
+
+/* EMPLOYEES LIST TABLE */
 #employees {
   border-collapse: collapse;
   width: 100%;
@@ -10,7 +25,6 @@ h3 {
 #employees thead :nth-child(2) > * {
   /* font-weight: normal; */
   color: var(--tertiary);
-
 }
 
 #employees th {
@@ -37,14 +51,36 @@ h3 {
   background-color: var(--tertiary);
 }
 
-.search{
+/* TABLE NAVIGATION */
+.table-navigation {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.search input {
-  margin: 1rem 0 1rem 0.5rem;
-  border: 1px solid var(--secondary);
+.table-navigation > * {
+  margin: 5px;
+}
+
+.table-navigation input {
+  width: 40px;
+  text-align: center;
+}
+
+.table-navigation select,
+input,
+button {
   border-radius: 5px;
+  border: 1px solid var(--secondary);
+}
+
+.table-navigation button {
+  cursor: pointer;
+  background-color: var(--tertiary);
+  color: var(--primary);
+}
+
+.table-navigation button:disabled {
+  background-color: var(--disabled);
 }

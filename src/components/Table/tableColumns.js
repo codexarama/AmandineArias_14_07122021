@@ -1,11 +1,11 @@
 export const TABLE_COLUMNS = [
   {
-    Header: 'Id',
-    accessor: 'id',
-  },
-  {
     Header: 'Identity',
     columns: [
+      {
+        Header: 'Id',
+        accessor: 'id',
+      },
       {
         Header: 'First Name',
         accessor: 'first_name',
