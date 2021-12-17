@@ -7,8 +7,7 @@ import {
 import React, { useMemo } from 'react';
 
 import { TABLE_COLUMNS } from './tableColumns';
-import EMPLOYEE_LIST from '../../data/MOCK_DATA.json';
-
+import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import TableFilter from './TableFilter';
 
 import './table.css';
@@ -16,7 +15,7 @@ import './table.css';
 export default function Table() {
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
-  const data = useMemo(() => EMPLOYEE_LIST, []);
+  const data = useMemo(() => EMPLOYEES_LIST, []);
 
   // table instance
   const tableInstance = useTable(
@@ -76,12 +75,12 @@ export default function Table() {
     );
   });
 
-  // handle table state for filtering data with search bar component
+  // handle table state for different options
   const { globalFilter, pageIndex, pageSize } = state;
 
   return (
     <section>
-      <h3>{`${EMPLOYEE_LIST.length} currently employed`}</h3>
+      <h3>{`${EMPLOYEES_LIST.length} currently employed`}</h3>
       <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table id="employees" {...getTableProps()}>
         <thead>{theadContent}</thead>
@@ -95,7 +94,7 @@ export default function Table() {
         >
           {[10, 25, 50, 100].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
-              Show {pageSize} data{' '}
+              Show {pageSize}
             </option>
           ))}
         </select>
