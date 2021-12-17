@@ -11,8 +11,8 @@ h3 {
 }
 
 .search-icon {
-width: 15px;
-margin-right: 5px;
+  width: 15px;
+  margin-right: 5px;
 }
 
 .search input {
@@ -60,6 +60,7 @@ margin-right: 5px;
 .table-navigation {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -68,16 +69,20 @@ margin-right: 5px;
   margin: 5px;
 }
 
-.table-navigation input {
-  width: 40px;
-  text-align: center;
-}
-
 .table-navigation select,
 input,
 button {
   border-radius: 5px;
   border: 1px solid var(--secondary);
+}
+
+.table-navigation input {
+  width: 40px;
+  text-align: center;
+}
+
+.table-navigation option {
+  text-align: right;
 }
 
 .table-navigation button {
