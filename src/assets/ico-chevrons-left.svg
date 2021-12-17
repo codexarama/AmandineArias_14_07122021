@@ -7,20 +7,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   fill="none"
    height="24"
-   stroke="#000"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-width="2"
    viewBox="0 0 24 24"
    width="24"
    version="1.1"
-   id="svg4"
-   sodipodi:docname="ico-chevron-left.svg"
+   id="svg6"
+   sodipodi:docname="ico-chevrons-left.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
-     id="metadata10">
+     id="metadata12">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -31,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs8" />
+     id="defs10" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -43,7 +38,7 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
-     id="namedview6"
+     id="namedview8"
      showgrid="false"
      inkscape:zoom="9.8333333"
      inkscape:cx="-0.40677966"
@@ -51,9 +46,23 @@
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="svg6" />
   <polyline
-     points="15 18 9 12 15 6"
+     fill="none"
+     points="11 17 6 12 11 7"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="2"
      id="polyline2"
-     style="fill-opacity:1;fill:none;stroke:#483e37;stroke-opacity:1" />
+     style="stroke:#483e37;stroke-opacity:1" />
+  <polyline
+     fill="none"
+     points="18 17 13 12 18 7"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="2"
+     id="polyline4"
+     style="stroke:#483e37;stroke-opacity:1" />
 </svg>
