@@ -4,7 +4,7 @@ import {
   useGlobalFilter,
   usePagination,
 } from 'react-table';
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 
 import { TABLE_COLUMNS } from './tableColumns';
 import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
@@ -16,6 +16,24 @@ export default function Table() {
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
   const data = useMemo(() => EMPLOYEES_LIST, []);
+
+  // // update table with new employee data from local storage
+  // const [employees, setEmployees] = useState(data);
+  // const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
+  // if (localStorage.length > 0) {
+  //   newEmployee.id = `${EMPLOYEES_LIST.length}`;
+  //   setEmployees({...employees, newEmployee});
+  // // Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+  // // localStorage.clear();
+  // }
+
+  // update table with new employee data from local storage
+  const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
+  if (localStorage.length > 0) {
+    EMPLOYEES_LIST.push(newEmployee);
+    newEmployee.id = `${EMPLOYEES_LIST.length}`;
+    localStorage.clear();
+  }
 
   // table instance
   const tableInstance = useTable(
@@ -87,19 +105,21 @@ export default function Table() {
         <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
       </table>
       <div className="table-navigation">
+        Show
         <select
-          id=""
+          id="showEntries"
           value={pageSize}
           onChange={(e) => setPageSize(Number(e.target.value))}
         >
           {[10, 25, 50, 100].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
-              Show {pageSize}
+              {pageSize}
             </option>
           ))}
         </select>
+        entries
         <span>
-          Go to page{' '}
+          <strong>∣</strong> Go to page{' '}
           <input
             type="number"
             className="go-to-page"
@@ -117,16 +137,20 @@ export default function Table() {
           </strong>
         </span>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
+          {/* « First */}
+          ⏮ First
         </button>
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          ◀ Previous
+          {/* ‹ Previous */}
+          ⯇ Previous
         </button>
         <button onClick={() => nextPage()} disabled={!canNextPage}>
-          Next ▶
+          {/* Next › */}
+          Next ⯈
         </button>
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
+          {/* Last » */}
+          Last ⏭
         </button>
       </div>
     </section>
