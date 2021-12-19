@@ -4,36 +4,20 @@ import {
   useGlobalFilter,
   usePagination,
 } from 'react-table';
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { TABLE_COLUMNS } from './tableColumns';
-import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
+// import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import TableFilter from './TableFilter';
 
 import './table.css';
 
 export default function Table() {
+  let employeesList = JSON.parse(localStorage.getItem('employeesList')) || [];
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
-  const data = useMemo(() => EMPLOYEES_LIST, []);
-
-  // // update table with new employee data from local storage
-  // const [employees, setEmployees] = useState(data);
-  // const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
-  // if (localStorage.length > 0) {
-  //   newEmployee.id = `${EMPLOYEES_LIST.length}`;
-  //   setEmployees({...employees, newEmployee});
-  // // Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
-  // // localStorage.clear();
-  // }
-
-  // update table with new employee data from local storage
-  const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
-  if (localStorage.length > 0) {
-    EMPLOYEES_LIST.push(newEmployee);
-    newEmployee.id = `${EMPLOYEES_LIST.length}`;
-    localStorage.clear();
-  }
+  // const data = useMemo(() => EMPLOYEES_LIST, []);
+  const data = useMemo(() => employeesList, []);
 
   // table instance
   const tableInstance = useTable(
@@ -98,7 +82,8 @@ export default function Table() {
 
   return (
     <section>
-      <h3>{`${EMPLOYEES_LIST.length} currently employed`}</h3>
+      <h3>{`${employeesList.length} currently employed`}</h3>
+      {/* <h3>{`${EMPLOYEES_LIST.length} currently employed`}</h3> */}
       <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table id="employees" {...getTableProps()}>
         <thead>{theadContent}</thead>
@@ -131,26 +116,25 @@ export default function Table() {
           />
         </span>
         <span>
-          Page{' '}
           <strong>
-            {pageIndex + 1} of {pageOptions.length}
+            Page{' '} {pageIndex + 1} of {pageOptions.length}
           </strong>
         </span>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {/* « First */}
-          ⏮ First
+          « First
+          {/* ⏮ First */}
         </button>
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {/* ‹ Previous */}
-          ⯇ Previous
+          ‹ Previous
+          {/* ⯇ Previous */}
         </button>
         <button onClick={() => nextPage()} disabled={!canNextPage}>
-          {/* Next › */}
-          Next ⯈
+          Next ›
+          {/* Next ⯈ */}
         </button>
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {/* Last » */}
-          Last ⏭
+          Last »
+          {/* Last ⏭ */}
         </button>
       </div>
     </section>
