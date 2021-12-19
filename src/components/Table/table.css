@@ -10,6 +10,11 @@ h3 {
   align-items: center;
 }
 
+.search-icon {
+  width: 15px;
+  margin-right: 5px;
+}
+
 .search input {
   margin: 1rem 0 1rem 0.5rem;
   border: 1px solid var(--secondary);
@@ -19,6 +24,7 @@ h3 {
 /* EMPLOYEES LIST TABLE */
 #employees {
   border-collapse: collapse;
+  border: none;
   width: 100%;
 }
 
@@ -55,6 +61,7 @@ h3 {
 .table-navigation {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -63,16 +70,21 @@ h3 {
   margin: 5px;
 }
 
-.table-navigation input {
-  width: 40px;
-  text-align: center;
-}
-
 .table-navigation select,
 input,
 button {
   border-radius: 5px;
   border: 1px solid var(--secondary);
+  line-height: 1.25rem;
+}
+
+.table-navigation input {
+  width: 40px;
+  text-align: center;
+}
+
+.table-navigation option {
+  text-align: right;
 }
 
 .table-navigation button {

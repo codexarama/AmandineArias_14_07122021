@@ -33,7 +33,7 @@ export const TABLE_COLUMNS = [
       },
       {
         Header: 'State',
-        accessor: 'state',
+        accessor: 'state_abbrev',
       },
       {
         Header: 'Zip Code',
@@ -55,4 +55,16 @@ export const TABLE_COLUMNS = [
       },
     ],
   },
+
+  // {
+  //   Header : 'Actions',
+  //   columns: [
+  //     {
+  //       Header: 'm'
+  //     },
+  //     {
+  //       Header: 'x'
+  //     }
+  //   ]
+  // }
 ];
