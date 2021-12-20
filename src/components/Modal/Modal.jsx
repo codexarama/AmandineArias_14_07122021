@@ -5,7 +5,7 @@ import icoConfirm from '../../assets/ico-user-confirm.svg';
 
 import './modal.css';
 
-export default function Modal ({ show, close, title, msg, sub }) {
+export default function Modal ({ show, close, title, sub, msg }) {
   const employeesList = useNavigate();
 
   function goTo() {
@@ -16,16 +16,12 @@ export default function Modal ({ show, close, title, msg, sub }) {
     //     employeesList(`/employees`)
     //   }, 8000);
 
-  function closeModal() {
-    close();
-  }
-
   return createPortal(
     <>
       {show ? (
         <main className="modal">
           <section className="modal-content">
-            <button className="modal-close" onClick={closeModal}>
+            <button className="modal-close" onClick={close}>
               <img src={icoClose} alt="close icon" />
             </button>
             <img
@@ -37,11 +33,11 @@ export default function Modal ({ show, close, title, msg, sub }) {
               <h2 className="modal-title"> {title} </h2>
             </header>
             <main className="modal-msg">
-              <p>{msg}</p>
               <p>{sub}</p>
+              <p>{msg}</p>
             </main>
             <footer className="modal-footer">
-              <button className="return" onClick={closeModal}>
+              <button className="return" onClick={close}>
                 Add employee
               </button>
               <button className="result" onClick={goTo}>
