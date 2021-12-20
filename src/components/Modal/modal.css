@@ -1,0 +1,87 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--colored-bg);
+}
+
+.modal button {
+  border: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  background: transparent;
+}
+
+.modal-close img {
+  width: 2rem;
+  transition: all 0.3s;
+}
+
+.modal-close img:hover {
+  transform: scale(1.1);
+}
+
+.modal-content {
+  width: 30vw;
+  height: auto;
+  background-color: var(--light);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--tertiary) 0 0 5px 1px;
+}
+
+.confirm-employee-ico {
+  width: 2.5rem;
+  display: block;
+  margin: 1rem auto 2rem;
+}
+
+.modal-header {
+  position: relative;
+  border-bottom: 3px solid var(--tertiary);
+}
+
+.modal-title {
+  color: var(--tertiary);
+}
+
+.modal-title,
+.modal-msg {
+  text-align: center;
+}
+
+.modal-msg {
+  border-bottom: 1px solid var(--secondary);
+  padding: 2rem 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+}
+
+.modal-footer button {
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.return:hover,
+.result:hover {
+  background-color: var(--secondary);
+  color: var(--light);
+}
