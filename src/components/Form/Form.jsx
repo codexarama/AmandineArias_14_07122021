@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import icoAdd from '../../assets/ico-user-add.svg';
+import Modal from '../Modal/Modal';
 // import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import './form.css';
 
@@ -18,6 +19,7 @@ export default function Form() {
   };
 
   const [newEmployee, setNewEmployee] = useState(initialState);
+  const [modal, setModal] = useState(false);
 
   // function isDisabled(inputValue) {
   //   return inputValue === '';
@@ -60,20 +62,18 @@ export default function Form() {
 
     // ACTUALISATION LA LISTE DES EMPLOYES ('employeesList')
     employeesList.push(newEmployee);
+    newEmployee.id = employeesList.length;
 
     // ENREGISTREMENT DES DONNEES DANS LE LOCAL STORAGE
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList));
 
     setNewEmployee(initialState);
+    setModal(!modal);
   };
 
   return (
     <form action="" id="add-employee-form" onSubmit={handleSubmit}>
-      <img
-        className="add-employee-ico"
-        src={icoAdd}
-        alt="Health Wealth logo brand name"
-      />
+      <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
 
       <div className="input-wrapper">
         <label htmlFor="firstName">First name</label>
@@ -166,6 +166,13 @@ export default function Form() {
         />
       </div>
       {btn}
+      <Modal
+        show={modal}
+        // close={Toggle}
+        title={'Confirmation'}
+        msg={'New collaborator'}
+        sub={'successfully registred'}
+      />
     </form>
   );
 }
