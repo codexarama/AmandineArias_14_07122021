@@ -8,15 +8,15 @@ export const TABLE_COLUMNS = [
       },
       {
         Header: 'First Name',
-        accessor: 'first_name',
+        accessor: 'firstName',
       },
       {
         Header: 'Last Name',
-        accessor: 'last_name',
+        accessor: 'lastName',
       },
       {
         Header: 'Birth Date',
-        accessor: 'date_Of_birth',
+        accessor: 'dateOfBirth',
       },
     ],
   },
@@ -33,11 +33,11 @@ export const TABLE_COLUMNS = [
       },
       {
         Header: 'State',
-        accessor: 'state_abbrev',
+        accessor: 'stateAbbrev',
       },
       {
         Header: 'Zip Code',
-        accessor: 'zip_code',
+        accessor: 'zipCode',
       },
     ],
   },
@@ -47,7 +47,7 @@ export const TABLE_COLUMNS = [
     columns: [
       {
         Header: 'Start Date',
-        accessor: 'start_date',
+        accessor: 'startDate',
       },
       {
         Header: 'Department',

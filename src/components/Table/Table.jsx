@@ -14,6 +14,8 @@ import './table.css';
 
 export default function Table() {
   let employeesList = JSON.parse(localStorage.getItem('employeesList')) || [];
+  // console.log(employeesList);
+
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
   // const data = useMemo(() => EMPLOYEES_LIST, []);
@@ -117,7 +119,7 @@ export default function Table() {
         </span>
         <span>
           <strong>
-            Page{' '} {pageIndex + 1} of {pageOptions.length}
+            Page {pageIndex + 1} of {pageOptions.length}
           </strong>
         </span>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
@@ -129,12 +131,10 @@ export default function Table() {
           {/* ⯇ Previous */}
         </button>
         <button onClick={() => nextPage()} disabled={!canNextPage}>
-          Next ›
-          {/* Next ⯈ */}
+          Next ›{/* Next ⯈ */}
         </button>
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          Last »
-          {/* Last ⏭ */}
+          Last »{/* Last ⏭ */}
         </button>
       </div>
     </section>

@@ -3,23 +3,11 @@ import logoBrand from '../../assets/HRnet_logo-brand.svg';
 import icoList from '../../assets/ico-list.svg';
 import icoAdd from '../../assets/ico-user-add.svg';
 
-import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 
 import { NavLink } from 'react-router-dom';
 import './navbar.css';
 
 export default function Navbar() {
-  // OK MAIS ///////////////////////////////////////////////////////////////////////
-  // RETOUR A LA LISTE INITIALE DES EMPLOYES ///////////////////////////////////////
-  // SI RECHARGEMENT DE LA PAGE ////////////////////////////////////////////////////
-  // A FIXER ///////////////////////////////////////////////////////////////////////
-
-  const employeesList = localStorage.setItem(
-    'employeesList',
-    JSON.stringify(EMPLOYEES_LIST) || []
-  );
-  console.log(employeesList);
-
   return (
     <>
       <nav>
