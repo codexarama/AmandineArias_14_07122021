@@ -1,46 +1,45 @@
 import React, { useState } from 'react';
+
 import icoAdd from '../../assets/ico-user-add.svg';
-import Modal from '../Modal/Modal';
+
 // import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
+import states from '../../data/MOCK_STATES.json';
+import departments from '../../data/MOCK_DEPARTEMENTS.json';
+
+import Modal from '../Modal/Modal';
+import Dropdown from '../Dropdown/Dropdown';
+
 import './form.css';
 
 export default function Form() {
   const initialState = {
-    id: '',
+    // id: '',
     firstName: '',
     lastName: '',
     dateOfBirth: '',
     street: '',
     city: '',
-    stateAbbrev: '',
+    abbrev: '',
     zipCode: '',
     startDate: '',
     department: '',
   };
 
+  // const [disable, setDisable] = useState(true);
   const [newEmployee, setNewEmployee] = useState(initialState);
   const [modal, setModal] = useState(false);
-  const Toggle = () => setModal(!modal);
-
-  // function isDisabled(inputValue) {
-  //   return inputValue === '';
-  // }
-  // console.log(newEmployee.every(isDisabled));
-  // newEmployee.every is not a function
+  const toggle = () => setModal(!modal);
 
   const submit =
-    // isDisabled(newEmployee) ? ( // ne fonctionne pas
-    // newEmployee !== '' ? ( // reste disabled mm si tous les champs sont remplis
-
-    newEmployee.firstName === '' ||
-    newEmployee.lastName === '' ||
-    newEmployee.dateOfBirth === '' ||
-    newEmployee.street === '' ||
-    newEmployee.city === '' ||
-    newEmployee.stateAbbrev === '' ||
-    newEmployee.zipCode === '' ||
-    newEmployee.startDate === '' ||
-    newEmployee.department === '' ? (
+    !newEmployee.firstName ||
+    !newEmployee.lastName ||
+    !newEmployee.dateOfBirth ||
+    !newEmployee.street ||
+    !newEmployee.city ||
+    !newEmployee.abbrev ||
+    !newEmployee.zipCode ||
+    !newEmployee.startDate ||
+    !newEmployee.department ? (
       <button type="submit" className="add-employee-button" disabled>
         Add an employee
       </button>
@@ -51,6 +50,11 @@ export default function Form() {
     );
 
   const handleChange = (e) => {
+    // HANDLE DISABLE ATTRIBUTE FOR SUBMIT BUTTON
+    // OK : le state de chaque champ passe à FALSE si saisie
+    // MAIS : le bouton reste DISABLED MEME SI tous les STATUTS sont à FALSE
+    // setDisable({ ...newEmployee, [e.target.id]: e.target.value.trim() === '' }); // tous les champs
+    // setDisable(e.target.value.trim() === ''); // 1 seul champ
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value });
   };
 
@@ -126,16 +130,12 @@ export default function Form() {
           autoComplete="off"
         />
       </div>
-      <div className="input-wrapper">
-        <label htmlFor="state">State</label>
-        <input
-          type="text"
-          id="stateAbbrev"
-          value={newEmployee.stateAbbrev}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
+      <Dropdown
+        label="States"
+        id="state"
+        select={states}
+        handleChange={handleChange}
+      />
       <div className="input-wrapper">
         <label htmlFor="zipCode">Zip Code</label>
         <input
@@ -156,20 +156,20 @@ export default function Form() {
           autoComplete="off"
         />
       </div>
-      <div className="input-wrapper">
-        <label htmlFor="department">Department</label>
-        <input
-          type="text"
-          id="department"
-          value={newEmployee.department}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
+      <Dropdown
+        label="Departments"
+        id="department"
+        select={departments}
+        handleChange={handleChange}
+      />
+      {/* <button type="submit" className="add-employee-button" disabled={!newEmployee.value}> */}
+      {/* <button type="submit" className="add-employee-button" disabled={disable}> */}
+      {/* Add an employee
+      </button> */}
       {submit}
       <Modal
         show={modal}
-        close={Toggle}
+        close={toggle}
         title={'Confirmation'}
         sub={'New collaborator'}
         msg={'successfully registred'}
