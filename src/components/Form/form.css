@@ -5,7 +5,7 @@
   width: 500px;
   margin: 0 auto 2rem;
   padding: 2.5rem 5rem;
-  background: white;
+  background: var(--light);
   border-radius: 0.5rem;
   box-shadow: var(--tertiary) 0 0 5px 1px;
 }
@@ -33,11 +33,25 @@
   color: var(--secondary);
 }
 
-.input-wrapper input {
+.input-wrapper input,
+select {
   padding: 5px;
   border: none;
   border-bottom: 2px solid var(--tertiary);
+  border-radius: 0;
+  color: var(--tertiary);
   font-size: 1rem;
+}
+
+.input-wrapper select:focus {
+  outline: none;
+  border-top: none;
+  background-color: var(--tertiary);
+  color: var(--light);
+}
+
+.input-wrapper option:hover {
+  background-color: var(--secondary);
 }
 
 /* .input-wrapper input:focus~label{
@@ -45,26 +59,6 @@
   top: -30px;
   left: 0;
 } */
-
-.input-wrapper input[type=date] {
-  color: var(--tertiary);
-}
-
-.input-wrapper small {
-  position: absolute;
-  top: 3.5rem;
-  color: var(--error);
-}
-
-.input-alert {
-  height: 3rem;
-  margin: 0 auto;
-}
-
-.input-alert--msg {
-  line-height: 3rem;
-  color: var(--error);
-}
 
 .add-employee-button {
   display: block;
@@ -76,7 +70,7 @@
   border: none;
   border-radius: 0.5rem;
   background-color: var(--tertiary);
-  color: #fff;
+  color: var(--light);
 }
 
 .add-employee-button:disabled,

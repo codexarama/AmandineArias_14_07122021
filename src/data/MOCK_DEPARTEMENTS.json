@@ -1,0 +1,13 @@
+[
+    { "abbrev"  : "NO", "value": "select"},
+    { "abbrev"  : "SU", "value": "Support"},
+    { "abbrev"  : "RD", "value": "Research and Development"},
+    { "abbrev"  : "PM", "value": "Product Management"},
+    { "abbrev"  : "HR", "value": "Human Ressources"},
+    { "abbrev"  : "LE", "value": "Legal"},
+    { "abbrev"  : "AC", "value": "Accounting"},
+    { "abbrev"  : "TR", "value": "Training"},
+    { "abbrev"  : "BD", "value": "Business Development"},
+    { "abbrev"  : "SE", "value": "Services"},
+    { "abbrev"  : "MA", "value": "Marketing"}
+  ]
