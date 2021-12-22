@@ -27,39 +27,39 @@
 }
 
 .firstName {
-  order: 1
+  order: 1;
 }
 
 .lastName {
-  order: 2
+  order: 2;
 }
 
 .dateOfBirth {
-  order: 3
+  order: 3;
 }
 
 .street {
-  order: 4
+  order: 4;
 }
 
 .city {
-  order: 5
+  order: 5;
 }
 
 .zipCode {
-  order: 6
+  order: 6;
 }
 
 .state {
-  order: 7
+  order: 7;
 }
 
 .startDate {
-  order: 8
+  order: 8;
 }
 
 .department {
-  order: 9
+  order: 9;
 }
 
 .input-wrapper label {
@@ -70,6 +70,7 @@
 .input-wrapper input,
 select {
   padding: 5px;
+  border: none;
   border-bottom: 2px solid var(--tertiary);
   border-radius: 0;
   color: var(--tertiary-constrast);
@@ -78,7 +79,6 @@ select {
 
 .input-wrapper select:focus {
   outline: none;
-  border-top: none;
   background-color: var(--tertiary);
   color: var(--light);
 }
@@ -94,6 +94,7 @@ select {
   padding: 10px;
   font-size: 1rem;
   font-weight: bold;
+  border: none;
   border-radius: 0.5rem;
   background-color: var(--tertiary);
   color: var(--light);
