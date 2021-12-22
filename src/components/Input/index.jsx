@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Field({ id, label, type, value, index, handleChange }) {
+export default function Input({ id, label, type, value, index, handleChange }) {
   return (
     <div className={`input-wrapper ${id}`} key={index}>
       <label htmlFor={id}>{label}</label>
