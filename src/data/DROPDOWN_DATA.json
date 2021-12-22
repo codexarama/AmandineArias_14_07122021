@@ -1,242 +1,267 @@
 [
-    {
+  {
+    "id": "state",
+    "name": "State",
+    "type": "text",
+    "select": [
+      {
         "value": "select",
         "abbrev": ""
-    },
-    {
+      },
+      {
         "value": "Alabama",
         "abbrev": "AL"
-    },
-    {
+      },
+      {
         "value": "Alaska",
         "abbrev": "AK"
-    },
-    {
+      },
+      {
         "value": "American Samoa",
         "abbrev": "AS"
-    },
-    {
+      },
+      {
         "value": "Arizona",
         "abbrev": "AZ"
-    },
-    {
+      },
+      {
         "value": "Arkansas",
         "abbrev": "AR"
-    },
-    {
+      },
+      {
         "value": "California",
         "abbrev": "CA"
-    },
-    {
+      },
+      {
         "value": "Colorado",
         "abbrev": "CO"
-    },
-    {
+      },
+      {
         "value": "Connecticut",
         "abbrev": "CT"
-    },
-    {
+      },
+      {
         "value": "Delaware",
         "abbrev": "DE"
-    },
-    {
+      },
+      {
         "value": "District Of Columbia",
         "abbrev": "DC"
-    },
-    {
+      },
+      {
         "value": "Federated States Of Micronesia",
         "abbrev": "FM"
-    },
-    {
+      },
+      {
         "value": "Florida",
         "abbrev": "FL"
-    },
-    {
+      },
+      {
         "value": "Georgia",
         "abbrev": "GA"
-    },
-    {
+      },
+      {
         "value": "Guam",
         "abbrev": "GU"
-    },
-    {
+      },
+      {
         "value": "Hawaii",
         "abbrev": "HI"
-    },
-    {
+      },
+      {
         "value": "Idaho",
         "abbrev": "ID"
-    },
-    {
+      },
+      {
         "value": "Illinois",
         "abbrev": "IL"
-    },
-    {
+      },
+      {
         "value": "Indiana",
         "abbrev": "IN"
-    },
-    {
+      },
+      {
         "value": "Iowa",
         "abbrev": "IA"
-    },
-    {
+      },
+      {
         "value": "Kansas",
         "abbrev": "KS"
-    },
-    {
+      },
+      {
         "value": "Kentucky",
         "abbrev": "KY"
-    },
-    {
+      },
+      {
         "value": "Louisiana",
         "abbrev": "LA"
-    },
-    {
+      },
+      {
         "value": "Maine",
         "abbrev": "ME"
-    },
-    {
+      },
+      {
         "value": "Marshall Islands",
         "abbrev": "MH"
-    },
-    {
+      },
+      {
         "value": "Maryland",
         "abbrev": "MD"
-    },
-    {
+      },
+      {
         "value": "Massachusetts",
         "abbrev": "MA"
-    },
-    {
+      },
+      {
         "value": "Michigan",
         "abbrev": "MI"
-    },
-    {
+      },
+      {
         "value": "Minnesota",
         "abbrev": "MN"
-    },
-    {
+      },
+      {
         "value": "Mississippi",
         "abbrev": "MS"
-    },
-    {
+      },
+      {
         "value": "Missouri",
         "abbrev": "MO"
-    },
-    {
+      },
+      {
         "value": "Montana",
         "abbrev": "MT"
-    },
-    {
+      },
+      {
         "value": "Nebraska",
         "abbrev": "NE"
-    },
-    {
+      },
+      {
         "value": "Nevada",
         "abbrev": "NV"
-    },
-    {
+      },
+      {
         "value": "New Hampshire",
         "abbrev": "NH"
-    },
-    {
+      },
+      {
         "value": "New Jersey",
         "abbrev": "NJ"
-    },
-    {
+      },
+      {
         "value": "New Mexico",
         "abbrev": "NM"
-    },
-    {
+      },
+      {
         "value": "New York",
         "abbrev": "NY"
-    },
-    {
+      },
+      {
         "value": "North Carolina",
         "abbrev": "NC"
-    },
-    {
+      },
+      {
         "value": "North Dakota",
         "abbrev": "ND"
-    },
-    {
+      },
+      {
         "value": "Northern Mariana Islands",
         "abbrev": "MP"
-    },
-    {
+      },
+      {
         "value": "Ohio",
         "abbrev": "OH"
-    },
-    {
+      },
+      {
         "value": "Oklahoma",
         "abbrev": "OK"
-    },
-    {
+      },
+      {
         "value": "Oregon",
         "abbrev": "OR"
-    },
-    {
+      },
+      {
         "value": "Palau",
         "abbrev": "PW"
-    },
-    {
+      },
+      {
         "value": "Pennsylvania",
         "abbrev": "PA"
-    },
-    {
+      },
+      {
         "value": "Puerto Rico",
         "abbrev": "PR"
-    },
-    {
+      },
+      {
         "value": "Rhode Island",
         "abbrev": "RI"
-    },
-    {
+      },
+      {
         "value": "South Carolina",
         "abbrev": "SC"
-    },
-    {
+      },
+      {
         "value": "South Dakota",
         "abbrev": "SD"
-    },
-    {
+      },
+      {
         "value": "Tennessee",
         "abbrev": "TN"
-    },
-    {
+      },
+      {
         "value": "Texas",
         "abbrev": "TX"
-    },
-    {
+      },
+      {
         "value": "Utah",
         "abbrev": "UT"
-    },
-    {
+      },
+      {
         "value": "Vermont",
         "abbrev": "VT"
-    },
-    {
+      },
+      {
         "value": "Virgin Islands",
         "abbrev": "VI"
-    },
-    {
+      },
+      {
         "value": "Virginia",
         "abbrev": "VA"
-    },
-    {
+      },
+      {
         "value": "Washington",
         "abbrev": "WA"
-    },
-    {
+      },
+      {
         "value": "West Virginia",
         "abbrev": "WV"
-    },
-    {
+      },
+      {
         "value": "Wisconsin",
         "abbrev": "WI"
-    },
-    {
+      },
+      {
         "value": "Wyoming",
         "abbrev": "WY"
-    }
+      }
+    ]
+  },
+  {
+    "id": "department",
+    "name": "Department",
+    "type": "text",
+    "select": [
+      { "abbrev": "NO", "value": "select" },
+      { "abbrev": "SU", "value": "Support" },
+      { "abbrev": "RD", "value": "Research and Development" },
+      { "abbrev": "PM", "value": "Product Management" },
+      { "abbrev": "HR", "value": "Human Ressources" },
+      { "abbrev": "LE", "value": "Legal" },
+      { "abbrev": "AC", "value": "Accounting" },
+      { "abbrev": "TR", "value": "Training" },
+      { "abbrev": "BD", "value": "Business Development" },
+      { "abbrev": "SE", "value": "Services" },
+      { "abbrev": "MA", "value": "Marketing" }
+    ]
+  }
 ]
