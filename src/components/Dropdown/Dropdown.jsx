@@ -5,7 +5,7 @@ export default function Dropdown({ id, label, select, handleChange }) {
 const isOpen = () => setIsVisible(!isVisible)
 
   return (
-    <div className="input-wrapper">
+    <div className= {`input-wrapper ${id}`}  >
       <label htmlFor={id}>{label}</label>
       <select
         className="dropdownList"
@@ -16,7 +16,7 @@ const isOpen = () => setIsVisible(!isVisible)
       >
         {select.map((data) => (
           <option type="text" value={data.value} key={data.abbrev}>
-            {data.value}
+            {data.value || data.abbrev}
           </option>
         ))}
       </select>{' '}

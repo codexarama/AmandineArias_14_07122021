@@ -1,27 +1,29 @@
+import React, { useMemo } from 'react';
+
 import {
   useTable,
   useSortBy,
   useGlobalFilter,
   usePagination,
 } from 'react-table';
-import React, { useMemo } from 'react';
+
+import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 
 import { TABLE_COLUMNS } from './tableColumns';
-// import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import TableFilter from './TableFilter';
 
 import './table.css';
 
 export default function Table() {
-  let employeesList = JSON.parse(localStorage.getItem('employeesList')) || [];
-  // console.log(employeesList);
+  // GET DATA
+  let employeesList =
+    JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
 
-  // useMemo hook to avoid re-rendering until the data changes
+  // useMEMO HOOK to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
-  // const data = useMemo(() => EMPLOYEES_LIST, []);
   const data = useMemo(() => employeesList, []);
 
-  // table instance
+  // TABLE INSTANCE
   const tableInstance = useTable(
     {
       columns: columns,
@@ -32,7 +34,7 @@ export default function Table() {
     usePagination
   );
 
-  // table props to define table instance
+  // TABLE PROPS to define table instance
   const {
     getTableProps,
     getTableBodyProps,
@@ -51,7 +53,7 @@ export default function Table() {
     setGlobalFilter,
   } = tableInstance;
 
-  // table head content mapping for rendering
+  // TABLE HEAD content mapping for rendering
   const theadContent = headerGroups.map((headerGroup) => {
     return (
       <tr {...headerGroup.getHeaderGroupProps()}>
@@ -67,7 +69,7 @@ export default function Table() {
     );
   });
 
-  // table body content mapping for rendering
+  // TABLE BODY content mapping for rendering
   const tbodyContent = page.map((row) => {
     prepareRow(row);
     return (
@@ -79,13 +81,12 @@ export default function Table() {
     );
   });
 
-  // handle table state for different options
+  // handle TABLE STATE for different options
   const { globalFilter, pageIndex, pageSize } = state;
 
   return (
     <section>
       <h3>{`${employeesList.length} currently employed`}</h3>
-      {/* <h3>{`${EMPLOYEES_LIST.length} currently employed`}</h3> */}
       <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table id="employees" {...getTableProps()}>
         <thead>{theadContent}</thead>
@@ -124,17 +125,15 @@ export default function Table() {
         </span>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           « First
-          {/* ⏮ First */}
         </button>
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
           ‹ Previous
-          {/* ⯇ Previous */}
         </button>
         <button onClick={() => nextPage()} disabled={!canNextPage}>
-          Next ›{/* Next ⯈ */}
+          Next ›
         </button>
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          Last »{/* Last ⏭ */}
+          Last »
         </button>
       </div>
     </section>
