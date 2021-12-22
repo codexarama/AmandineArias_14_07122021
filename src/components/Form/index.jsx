@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 
 import icoAdd from '../../assets/ico-user-add.svg';
 import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
-import FORM_DATA from '../../data/FORM_DATA.json';
-import STATES from '../../data/MOCK_STATES.json';
-import DEPARTMENTS from '../../data/MOCK_DEPARTEMENTS.json';
+import INPUT_DATA from '../../data/INPUT_DATA.json';
+import DROPDOWN_DATA from '../../data/DROPDOWN_DATA.json';
 
-import Field from '../Field';
+import Input from '../Input';
 import Dropdown from '../Dropdown';
 import Modal from '../Modal';
 
@@ -82,8 +81,8 @@ export default function Form() {
     <form action="" id="add-employee-form" onSubmit={handleSubmit}>
       <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
       <section className="form-data">
-        {FORM_DATA.map((data, index) => (
-          <Field
+        {INPUT_DATA.map((data, index) => (
+          <Input
             className={data.id}
             key={index}
             htmlFor={data.id}
@@ -96,20 +95,18 @@ export default function Form() {
           />
         ))}
 
-        <Dropdown
-          className="state"
-          label="State"
-          id="state"
-          select={STATES}
-          handleChange={handleChange}
-        />
-
-        <Dropdown
-          label="Department"
-          id="department"
-          select={DEPARTMENTS}
-          handleChange={handleChange}
-        />
+        {DROPDOWN_DATA.map((data, index) => (
+          <Dropdown
+            className={data.id}
+            key={index}
+            htmlFor={data.id}
+            label={data.name}
+            type={data.type}
+            id={data.id}
+            select={data.select}
+            handleChange={handleChange}
+          />
+        ))}
       </section>
 
       {submit}
