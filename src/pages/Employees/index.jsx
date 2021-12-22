@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Table from '../../components/Table/Table';
+import Table from '../../components/Table';
 
 export default function Employees() {
   useEffect(() => {

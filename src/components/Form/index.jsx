@@ -6,9 +6,9 @@ import FORM_DATA from '../../data/FORM_DATA.json';
 import STATES from '../../data/MOCK_STATES.json';
 import DEPARTMENTS from '../../data/MOCK_DEPARTEMENTS.json';
 
-import Field from '../Field/Field';
-import Dropdown from '../Dropdown/Dropdown';
-import Modal from '../Modal/Modal';
+import Field from '../Field';
+import Dropdown from '../Dropdown';
+import Modal from '../Modal';
 
 import './form.css';
 
