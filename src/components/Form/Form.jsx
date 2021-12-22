@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 
 import icoAdd from '../../assets/ico-user-add.svg';
+import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
+import FORM_DATA from '../../data/FORM_DATA.json';
+import STATES from '../../data/MOCK_STATES.json';
+import DEPARTMENTS from '../../data/MOCK_DEPARTEMENTS.json';
 
-// import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
-import states from '../../data/MOCK_STATES.json';
-import departments from '../../data/MOCK_DEPARTEMENTS.json';
-
-import Modal from '../Modal/Modal';
+import Field from '../Field/Field';
 import Dropdown from '../Dropdown/Dropdown';
+import Modal from '../Modal/Modal';
 
 import './form.css';
 
 export default function Form() {
   const initialState = {
-    // id: '',
     firstName: '',
     lastName: '',
     dateOfBirth: '',
     street: '',
     city: '',
-    abbrev: '',
+    state: '',
     zipCode: '',
     startDate: '',
     department: '',
   };
 
-  // const [disable, setDisable] = useState(true);
   const [newEmployee, setNewEmployee] = useState(initialState);
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
@@ -36,7 +35,7 @@ export default function Form() {
     !newEmployee.dateOfBirth ||
     !newEmployee.street ||
     !newEmployee.city ||
-    !newEmployee.abbrev ||
+    !newEmployee.state ||
     !newEmployee.zipCode ||
     !newEmployee.startDate ||
     !newEmployee.department ? (
@@ -49,124 +48,72 @@ export default function Form() {
       </button>
     );
 
+  // ON CHANGE
   const handleChange = (e) => {
-    // HANDLE DISABLE ATTRIBUTE FOR SUBMIT BUTTON
-    // OK : le state de chaque champ passe à FALSE si saisie
-    // MAIS : le bouton reste DISABLED MEME SI tous les STATUTS sont à FALSE
-    // setDisable({ ...newEmployee, [e.target.id]: e.target.value.trim() === '' }); // tous les champs
-    // setDisable(e.target.value.trim() === ''); // 1 seul champ
-    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value });
+    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() });
   };
 
-  // RECUPERATION DE LA LISTE DES EMPLOYES
+  // GET DATA
   let employeesList =
-    JSON.parse(window.localStorage.getItem('employeesList')) || [];
+    JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
 
+  // ON SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ACTUALISATION LA LISTE DES EMPLOYES ('employeesList')
+    // UPDATE DATA
     employeesList.push(newEmployee);
-    newEmployee.id = employeesList.length;
 
-    // ENREGISTREMENT DES DONNEES DANS LE LOCAL STORAGE
+    // COMPLETE / CORRECT DATA
+    newEmployee.id = employeesList.length;
+    newEmployee.state = employeesList.abbrev;
+
+    // STORE DATA
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList));
 
+    // RESET FORM
     setNewEmployee(initialState);
+
+    // OPEN MODAL
     setModal(!modal);
   };
 
   return (
     <form action="" id="add-employee-form" onSubmit={handleSubmit}>
       <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
+      <section className="form-data">
+        {FORM_DATA.map((data, index) => (
+          <Field
+            className={data.id}
+            key={index}
+            htmlFor={data.id}
+            label={data.name}
+            type={data.type}
+            id={data.id}
+            value={newEmployee[index]}
+            handleChange={handleChange}
+            autoComplete="off"
+          />
+        ))}
 
-      <div className="input-wrapper">
-        <label htmlFor="firstName">First name</label>
-        <input
-          type="text"
-          id="firstName"
-          value={newEmployee.firstName}
-          onChange={handleChange}
-          autoComplete="off"
+        <Dropdown
+          className="state"
+          label="State"
+          id="state"
+          select={STATES}
+          handleChange={handleChange}
         />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="lastName">Last name</label>
-        <input
-          type="text"
-          id="lastName"
-          value={newEmployee.lastName}
-          onChange={handleChange}
-          autoComplete="off"
+
+        <Dropdown
+          label="Department"
+          id="department"
+          select={DEPARTMENTS}
+          handleChange={handleChange}
         />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="dateOfBirth">Date of Birth</label>
-        <input
-          type="date"
-          id="dateOfBirth"
-          value={newEmployee.dateOfBirth}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="street">Street</label>
-        <input
-          type="text"
-          id="street"
-          value={newEmployee.street}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="city">City</label>
-        <input
-          type="text"
-          id="city"
-          value={newEmployee.city}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <Dropdown
-        label="States"
-        id="state"
-        select={states}
-        handleChange={handleChange}
-      />
-      <div className="input-wrapper">
-        <label htmlFor="zipCode">Zip Code</label>
-        <input
-          type="text"
-          id="zipCode"
-          value={newEmployee.zipCode}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="startDate">Start Date</label>
-        <input
-          type="date"
-          id="startDate"
-          value={newEmployee.startDate}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <Dropdown
-        label="Departments"
-        id="department"
-        select={departments}
-        handleChange={handleChange}
-      />
-      {/* <button type="submit" className="add-employee-button" disabled={!newEmployee.value}> */}
-      {/* <button type="submit" className="add-employee-button" disabled={disable}> */}
-      {/* Add an employee
-      </button> */}
+      </section>
+
       {submit}
+
       <Modal
         show={modal}
         close={toggle}
