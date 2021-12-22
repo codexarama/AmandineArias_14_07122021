@@ -41,7 +41,7 @@
      id="namedview16"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="86.341783"
+     inkscape:cx="55.932299"
      inkscape:cy="12"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
@@ -58,7 +58,7 @@
      y1="6"
      y2="6"
      id="line2"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -70,7 +70,7 @@
      y1="12"
      y2="12"
      id="line4"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -82,7 +82,7 @@
      y1="18"
      y2="18"
      id="line6"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -94,7 +94,7 @@
      y1="6"
      y2="6"
      id="line8"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -106,7 +106,7 @@
      y1="12"
      y2="12"
      id="line10"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -118,5 +118,5 @@
      y1="18"
      y2="18"
      id="line12"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
 </svg>
