@@ -79,7 +79,9 @@ export default function Form() {
 
   return (
     <form action="" id="add-employee-form" onSubmit={handleSubmit}>
+
       <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
+
       <section className="form-data">
         {INPUT_DATA.map((data, index) => (
           <Input
@@ -118,6 +120,7 @@ export default function Form() {
         sub={'New collaborator'}
         msg={'successfully registred'}
       />
+      
     </form>
   );
 }
