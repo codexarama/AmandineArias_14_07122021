@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Navbar from '../Navbar/Navbar';
-import Home from '../../pages/Home/Home';
-import Employees from '../../pages/Employees/Employees';
-import Error from '../../pages/Error/Error';
+import Navbar from '../Navbar';
+import Home from '../../pages/Home';
+import Employees from '../../pages/Employees';
+import Error from '../../pages/Error';
 
 import './App.css';
 
