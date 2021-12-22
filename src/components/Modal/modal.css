@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--colored-bg);
+  background-color: var(--bg);
 }
 
 .modal button {
@@ -52,7 +52,7 @@
 }
 
 .modal-title {
-  color: var(--tertiary);
+  color: var(--tertiary-constrast);
 }
 
 .modal-title,
@@ -67,7 +67,7 @@
 
 .modal-footer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;;
   padding-top: 2rem;
 }
 

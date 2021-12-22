@@ -1,5 +1,5 @@
 h3 {
-  color: var(--tertiary);
+  color: var(--tertiary-constrast);
   text-shadow: 0 0 0.5px var(--secondary);
 }
 

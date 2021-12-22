@@ -41,7 +41,7 @@
      id="namedview12"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="-0.40677966"
+     inkscape:cx="-24.355932"
      inkscape:cy="12"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
@@ -55,7 +55,7 @@
      stroke-linejoin="round"
      stroke-width="2"
      id="path2"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <circle
      cx="8.5"
      cy="7"
@@ -66,7 +66,7 @@
      stroke-linejoin="round"
      stroke-width="2"
      id="circle4"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -78,7 +78,7 @@
      y1="8"
      y2="14"
      id="line6"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
   <line
      fill="none"
      stroke="#000"
@@ -90,5 +90,5 @@
      y1="11"
      y2="11"
      id="line8"
-     style="stroke:#cad3af;stroke-opacity:0.94117647" />
+     style="stroke:#bec7a3;stroke-opacity:1" />
 </svg>

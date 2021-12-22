@@ -13,10 +13,11 @@ h1 {
 
 /* COLORS */
 :root {
-  --colored-bg: #fafbf9;
+  --bg: #fafbf9;
   --primary: #483e37;
   --secondary: #6c6753;
   --tertiary: #cad3ae;
+  --tertiary-constrast: #bec7a3;
   --light: #fff;
   --dark: #24221c;
   --error: #f95;
@@ -32,6 +33,13 @@ body {
 h1, h2, h3 {
   text-align: center;
   font-family: Open Sans Condensed;
+}
+
+input,
+select,
+textarea,
+button {
+  border: none;
 }
 
 input:focus,

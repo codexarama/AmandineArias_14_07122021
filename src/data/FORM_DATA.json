@@ -1,0 +1,9 @@
+[
+  { "id": "firstName", "name": "First name", "type": "text" },
+  { "id": "lastName", "name": "Last name", "type": "text" },
+  { "id": "dateOfBirth", "name": "Date of Birth", "type": "date" },
+  { "id": "street", "name": "Street", "type": "text" },
+  { "id": "city", "name": "City", "type": "text" },
+  { "id": "zipCode", "name": "Zip Code", "type": "text" },
+  { "id": "startDate", "name": "Start Date", "type": "date" }
+]
