@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 export default function Dropdown({ id, label, select, handleChange }) {
   const [isVisible, setIsVisible] = useState(false);
-const isOpen = () => setIsVisible(!isVisible)
+  const isOpen = () => setIsVisible(!isVisible);
 
   return (
-    <div className= {`input-wrapper ${id}`}  >
+    <div className={`input-wrapper ${id}`}>
       <label htmlFor={id}>{label}</label>
       <select
         className="dropdownList"
