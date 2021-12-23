@@ -18,7 +18,7 @@ export default function Table() {
   // GET DATA
   let employeesList =
     JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
-
+console.log(employeesList);
   // useMEMO HOOK to avoid re-rendering until the data changes
   const columns = useMemo(() => TABLE_COLUMNS, []);
   const data = useMemo(() => employeesList, []);

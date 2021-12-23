@@ -33,7 +33,7 @@ export const TABLE_COLUMNS = [
       },
       {
         Header: 'State',
-        accessor: 'abbrev',
+        accessor: 'stateAbbrev',
       },
       {
         Header: 'Zip Code',
