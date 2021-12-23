@@ -10,6 +10,7 @@ export default function Input({ id, label, type, value, index, handleChange }) {
         value={value}
         onChange={handleChange}
         autoComplete="off"
+        required
       />
     </div>
   );
