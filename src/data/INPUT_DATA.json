@@ -1,9 +1,9 @@
 [
-  { "id": "firstName", "name": "First name", "type": "text" },
-  { "id": "lastName", "name": "Last name", "type": "text" },
-  { "id": "dateOfBirth", "name": "Date of Birth", "type": "date" },
-  { "id": "street", "name": "Street", "type": "text" },
-  { "id": "city", "name": "City", "type": "text" },
-  { "id": "zipCode", "name": "Zip Code", "type": "text" },
-  { "id": "startDate", "name": "Start Date", "type": "date" }
+  { "id": "firstName", "label": "First name", "type": "text" },
+  { "id": "lastName", "label": "Last name", "type": "text" },
+  { "id": "dateOfBirth", "label": "Date of Birth", "type": "date" },
+  { "id": "street", "label": "Street", "type": "text" },
+  { "id": "city", "label": "City", "type": "text" },
+  { "id": "zipCode", "label": "Zip Code", "type": "text" },
+  { "id": "startDate", "label": "Start Date", "type": "date" }
 ]
