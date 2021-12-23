@@ -16,10 +16,10 @@ export default function Dropdown({ id, label, select, handleChange }) {
       >
         {select.map((data) => (
           <option type="text" value={data.value} key={data.abbrev}>
-            {data.value || data.abbrev}
+            {data.label}
           </option>
         ))}
-      </select>{' '}
+      </select>
     </div>
   );
 }

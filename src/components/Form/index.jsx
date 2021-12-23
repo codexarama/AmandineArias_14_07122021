@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import icoAdd from '../../assets/ico-user-add.svg';
 import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
@@ -12,30 +13,45 @@ import Modal from '../Modal';
 import './form.css';
 
 export default function Form() {
+  // MODAL MODULE SETTINGS
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
+  const redirectTo = useNavigate();
+  function goTo() {
+    redirectTo(`/employees`);
+  }
+  useEffect(() => {
+    if (modal) {
+      setTimeout(() => {
+        redirectTo(`/employees`);
+      }, 8000);
+    }
+  }, [modal, redirectTo]);
+
+  // FORM SETTINGS
   const initialState = {
     firstName: '',
     lastName: '',
     dateOfBirth: '',
     street: '',
     city: '',
-    state: '',
     zipCode: '',
+    stateAbbrev: '',
     startDate: '',
     department: '',
   };
 
   const [newEmployee, setNewEmployee] = useState(initialState);
-  const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
 
+  // CONDITIONS TO ENABLE SUBMIT (ELSE = DISABLE)
   const submit =
     !newEmployee.firstName ||
     !newEmployee.lastName ||
     !newEmployee.dateOfBirth ||
     !newEmployee.street ||
     !newEmployee.city ||
-    !newEmployee.state ||
     !newEmployee.zipCode ||
+    !newEmployee.stateAbbrev ||
     !newEmployee.startDate ||
     !newEmployee.department ? (
       <button type="submit" className="add-employee-button" disabled>
@@ -65,7 +81,6 @@ export default function Form() {
 
     // COMPLETE / CORRECT DATA
     newEmployee.id = employeesList.length;
-    newEmployee.state = employeesList.abbrev;
 
     // STORE DATA
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList));
@@ -79,7 +94,6 @@ export default function Form() {
 
   return (
     <form action="" id="add-employee-form" onSubmit={handleSubmit}>
-
       <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
 
       <section className="form-data">
@@ -88,7 +102,7 @@ export default function Form() {
             className={data.id}
             key={index}
             htmlFor={data.id}
-            label={data.name}
+            label={data.label}
             type={data.type}
             id={data.id}
             value={newEmployee[index]}
@@ -102,7 +116,7 @@ export default function Form() {
             className={data.id}
             key={index}
             htmlFor={data.id}
-            label={data.name}
+            label={data.label}
             type={data.type}
             id={data.id}
             select={data.select}
@@ -119,8 +133,12 @@ export default function Form() {
         title={'Confirmation'}
         sub={'New collaborator'}
         msg={'successfully registred'}
+        btn1={'Add employee'}
+        btn1ClassName={'return'}
+        btn2={'Employees list'}
+        btn2ClassName={'redirect'}
+        redirect={goTo}
       />
-      
     </form>
   );
 }
