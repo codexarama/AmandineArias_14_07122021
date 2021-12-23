@@ -37,6 +37,9 @@ h3 {
   font-family: Open Sans Condensed;
 }
 
+button {
+  border: none;
+}
 input:focus,
 select:focus,
 textarea:focus,

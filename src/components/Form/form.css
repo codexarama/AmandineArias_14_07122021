@@ -50,7 +50,7 @@
   order: 6;
 }
 
-.state {
+.stateAbbrev {
   order: 7;
 }
 
@@ -83,9 +83,19 @@ select {
   color: var(--light);
 }
 
-.input-wrapper option:hover {
+/* CHANGER L'ARRIERE PLAN BLEU AU HOVER */
+
+/* .input-wrapper select option:hover {
+  background-color: var(--secondary)!important;;
+} */
+
+/* .input-wrapper select > option :hover {
   background-color: var(--secondary);
-}
+} */
+
+/* .input-wrapper option:hover {
+  background-color: var(--secondary);
+} */
 
 .add-employee-button {
   display: block;
