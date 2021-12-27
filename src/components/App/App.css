@@ -14,12 +14,12 @@ h1 {
 /* COLORS */
 :root {
   --bg: #fafbf9;
-  --primary: #483e37;
-  --secondary: #6c6753;
-  --tertiary: #cad3ae;
+  --dark: #483e37;
+  --primary: #6c6753;
+  --secondary: #8d9379;
   --tertiary-constrast: #bec7a3;
+  --tertiary: #cad3ae;
   --light: #fff;
-  --dark: #24221c;
   --error: #f95;
   --disabled: #eef1e3;
   --table-row: #eef1e3;
@@ -40,13 +40,32 @@ h3 {
 button {
   border: none;
 }
+
+select {
+  outline: none;
+}
+
 input:focus,
 select:focus,
-textarea:focus,
 button:focus {
   outline: none;
 }
 
 a {
   text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary) !important;
+  /* background-color: var(--tertiary-constrast) !important; */
+  /* border: 2px solid var(--tertiary); */
 }
