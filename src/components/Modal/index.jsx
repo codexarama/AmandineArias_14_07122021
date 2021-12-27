@@ -10,8 +10,8 @@ export default function Modal({
   show,
   close,
   title,
-  sub,
-  msg,
+  msgL1,
+  msgL2,
   btn1,
   btn1ClassName,
   btn2,
@@ -24,27 +24,26 @@ export default function Modal({
       {show ? (
         <main className="modal">
           <section className="modal-content">
-            <button className="modal-close" onClick={close}>
+            <button className="modal-content--close" onClick={close}>
               <img src={icoClose} alt="close icon" />
             </button>
             <img
-              className="modal-icon"
+              className="modal-content--icon"
               src={icoConfirm}
               alt="confirm employee icon"
             />
             <header className="modal-header">
-              <h2 className="modal-title"> {title} </h2>
+              <h2 className="modal-header--title"> {title} </h2>
             </header>
-            <main className="modal-msg">
-              <p>{sub}</p>
-              <p>{msg}</p>
+            <main className="modal-main--msg">
+              <p className="modal-main--msgL1">{msgL1}< br className="modal-main--msgL2"/>{msgL2}</p>
             </main>
             <footer className="modal-footer">
-              <button className={`modal-btn1 ${btn1ClassName}`} onClick={close}>
+              <button className={`modal-footer--btn1 ${btn1ClassName}`} onClick={close}>
                 {btn1}
               </button>
               <button
-                className={`modal-btn2 ${btn2ClassName}`}
+                className={`modal-footer--btn2 ${btn2ClassName}`}
                 onClick={redirect}
               >
                 {btn2}

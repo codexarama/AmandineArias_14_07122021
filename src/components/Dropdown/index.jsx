@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
-
-export default function Dropdown({ id, label, select, handleChange }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const isOpen = () => setIsVisible(!isVisible);
-
+export default function Dropdown({
+  className,
+  id,
+  label,
+  select,
+  handleChange,
+}) {
   return (
-    <div className={`input-wrapper ${id}`}>
+    <div className={`input-wrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
       <select
         className="dropdownList"
         id={id}
-        onClick={isOpen}
         onChange={handleChange}
         required
       >
         {select.map((data) => (
-          <option type="text" value={data.value} key={data.abbrev}>
+          <option
+            title="dropdownOption"
+            type="text"
+            value={data.value}
+            key={data.abbrev}
+          >
             {data.label}
           </option>
         ))}
