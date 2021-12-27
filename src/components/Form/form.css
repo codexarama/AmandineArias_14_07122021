@@ -1,5 +1,5 @@
 /* FORM */
-#add-employee-form {
+.form-newEmployee {
   width: 500px;
   margin: 2rem auto;
   padding: 2.5rem 5rem;
@@ -9,17 +9,18 @@
   box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px;
 }
 
-.form-data {
-  display: flex;
-  flex-direction: column;
-}
-.add-employee-ico {
+.form-newEmployee--ico {
   width: 2.5rem;
   display: block;
   margin: 0 auto 2.5rem;
 }
 
-.input-wrapper {
+.form-newEmployee--data {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-newEmployee--inputWrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -47,12 +48,12 @@
   order: 6;
 }
 
-.input-wrapper label {
+.form-newEmployee--inputWrapper label {
   font-weight: 700;
   color: var(--primary);
 }
 
-.input-wrapper input,
+.form-newEmployee--inputWrapper input,
 select {
   padding: 5px;
   border: none;
@@ -63,32 +64,32 @@ select {
   font-weight: 100;
 }
 
-.input-wrapper select::-webkit-scrollbar {
+.form-newEmployee--inputWrapper select::-webkit-scrollbar {
   width: 5px;
 }
 
-.input-wrapper select::-webkit-scrollbar-thumb {
+.form-newEmployee--inputWrapper select::-webkit-scrollbar-thumb {
   background: var(--light);
 }
 
-.input-wrapper select:focus {
+.form-newEmployee--inputWrapper select:focus {
   outline: none;
   background-color: var(--tertiary);
   color: var(--light);
 }
 
-.input-wrapper select:focus option:checked {
+.form-newEmployee--inputWrapper select:focus option:checked {
   background: var(--secondary) !important;
 }
 
 /* CHANGER L'ARRIERE PLAN BLEU AU HOVER */
 /* NE FONCTIONNE PAS */
-/* .input-wrapper select option:hover {
+/* .form-newEmployee--inputWrapper select option:hover {
   background: #ff9500 -webkit-linear-gradient(bottom, #ff9500 0%, #ff9500 100%);
 } */
 
 /* ADDRESS GROUP */
-#addressContainer {
+.form-newEmployee--addressContainer {
   position: relative;
   order: 4;
   margin-top: 1rem;
@@ -100,7 +101,7 @@ select {
   /* background-color: antiquewhite; */
 }
 
-.addressGroup {
+.form-newEmployee--addressGroup{
   position: absolute;
   top: -1.25rem;
   right: -1px;
@@ -115,7 +116,7 @@ select {
 }
 
 /* SUBMIT */
-.add-employee-button {
+.form-newEmployee--submit {
   display: block;
   margin: 2rem auto 0;
   width: 15%;
@@ -128,10 +129,10 @@ select {
   color: var(--light);
 }
 
-.add-employee-button:disabled,
-.add-employee-button[disabled],
-.add-employee-button:disabled:hover,
-.add-employee-button[disabled]:hover {
+.form-newEmployee--submit:disabled,
+.form-newEmployee--submit[disabled],
+.form-newEmployee--submit:disabled:hover,
+.form-newEmployee--submit[disabled]:hover {
   background-color: var(--disabled);
   color: var(--tertiary);
   cursor: not-allowed;
