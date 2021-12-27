@@ -1,12 +1,12 @@
 /* FORM */
-
 #add-employee-form {
   width: 500px;
-  margin: 0 auto 2rem;
+  margin: 2rem auto;
   padding: 2.5rem 5rem;
   background: var(--light);
   border-radius: 0.5rem;
-  box-shadow: var(--tertiary) 0 0 5px 1px;
+  /* box-shadow: var(--secondary) 0 0 50px 0.1px; */
+  box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px;
 }
 
 .form-data {
@@ -26,6 +26,7 @@
   margin-bottom: 1rem;
 }
 
+/* INPUTS */
 .firstName {
   order: 1;
 }
@@ -38,33 +39,17 @@
   order: 3;
 }
 
-.street {
-  order: 4;
-}
-
-.city {
+.startDate {
   order: 5;
 }
 
-.zipCode {
-  order: 6;
-}
-
-.stateAbbrev {
-  order: 7;
-}
-
-.startDate {
-  order: 8;
-}
-
 .department {
-  order: 9;
+  order: 6;
 }
 
 .input-wrapper label {
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .input-wrapper input,
@@ -72,9 +57,18 @@ select {
   padding: 5px;
   border: none;
   border-bottom: 2px solid var(--tertiary);
-  border-radius: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
   color: var(--tertiary-constrast);
   font-size: 1rem;
+  font-weight: 100;
+}
+
+.input-wrapper select::-webkit-scrollbar {
+  width: 5px;
+}
+
+.input-wrapper select::-webkit-scrollbar-thumb {
+  background: var(--light);
 }
 
 .input-wrapper select:focus {
@@ -83,24 +77,48 @@ select {
   color: var(--light);
 }
 
+.input-wrapper select:focus option:checked {
+  background: var(--secondary) !important;
+}
+
 /* CHANGER L'ARRIERE PLAN BLEU AU HOVER */
-
+/* NE FONCTIONNE PAS */
 /* .input-wrapper select option:hover {
-  background-color: var(--secondary)!important;;
+  background: #ff9500 -webkit-linear-gradient(bottom, #ff9500 0%, #ff9500 100%);
 } */
 
-/* .input-wrapper select > option :hover {
-  background-color: var(--secondary);
-} */
+/* ADDRESS GROUP */
+#addressContainer {
+  position: relative;
+  order: 4;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--disabled);
+  /* border: 1px solid antiquewhite; */
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+  background-color: var(--disabled);
+  /* background-color: antiquewhite; */
+}
 
-/* .input-wrapper option:hover {
-  background-color: var(--secondary);
-} */
+.addressGroup {
+  position: absolute;
+  top: -1.25rem;
+  right: -1px;
+  font-weight: 100;
+  padding: 0 0.5rem;
+  background-color: var(--disabled);
+  /* background-color: antiquewhite; */
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: 'Open Sans Condensed';
+  color: var(--primary);
+  text-align: right;
+}
 
+/* SUBMIT */
 .add-employee-button {
   display: block;
   margin: 2rem auto 0;
-  width: 30%;
+  width: 15%;
   padding: 10px;
   font-size: 1rem;
   font-weight: bold;

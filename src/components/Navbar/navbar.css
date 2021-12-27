@@ -31,7 +31,7 @@ nav {
 
   .nav-menu h1 {
     padding-right: 1rem;
-    color: var(--secondary);
+    color: var(--primary);
   }
 
   .nav-menu-choice {
@@ -39,7 +39,7 @@ nav {
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
-    color: var(--secondary);
+    color: var(--primary);
   }
 
  .active {
@@ -47,7 +47,7 @@ nav {
   }
 
   .nav-menu-choice:hover {
-    background: var(--secondary);
+    background: var(--primary);
     color: var(--tertiary);
   }
 
