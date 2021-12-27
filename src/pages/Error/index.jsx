@@ -1,5 +1,7 @@
-import React from 'react';
-
+/**
+ * Error
+ * @returns {Reactnode}  jsx injected in DOM
+ */
 export default function Error() {
-  return <h1>Error</h1>;
+  return <h2 className="error-msg">Page not found</h2>;
 }
