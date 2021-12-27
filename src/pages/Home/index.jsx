@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import Form from '../../components/Form';
 
+/**
+ * Home
+ * @returns {Reactnode}  jsx injected in DOM
+ */
 export default function Home() {
   useEffect(() => {
     document.title = 'HRnet | Home';

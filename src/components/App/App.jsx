@@ -7,6 +7,11 @@ import Error from '../../pages/Error';
 
 import './App.css';
 
+/**
+ * App
+ * Handling web app routes
+ * @returns routes
+ */
 export default function App() {
   return (
     <BrowserRouter>
