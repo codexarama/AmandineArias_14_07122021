@@ -2,28 +2,37 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import icoAdd from '../../assets/ico-user-add.svg';
+
 import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import INPUT_DATA from '../../data/INPUT_DATA.json';
 import DROPDOWN_DATA from '../../data/DROPDOWN_DATA.json';
+// import DATEPICKER_DATA from '../../data/DATEPICKER_DATA.json';
 
 import Input from '../Input';
 import Dropdown from '../Dropdown';
+// import Datepicker from '../Datepicker';
 import Modal from '../Modal';
 
 import './form.css';
 
+/**
+ * Form
+ * @returns {Reactnode}  jsx injected in DOM
+ */
 export default function Form() {
   // MODAL MODULE SETTINGS
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
   const redirectTo = useNavigate();
+
   function goTo() {
-    redirectTo(`/employees`);
+    redirectTo('/employees');
   }
+
   useEffect(() => {
     if (modal) {
       setTimeout(() => {
-        redirectTo(`/employees`);
+        redirectTo('/employees');
       }, 8000);
     }
   }, [modal, redirectTo]);
@@ -44,6 +53,12 @@ export default function Form() {
   const [newEmployee, setNewEmployee] = useState(initialState);
 
   // CONDITIONS TO ENABLE SUBMIT (ELSE = DISABLE)
+  // const disable = {...newEmployee};
+  // const disable = [...newEmployee];
+  // console.log(disable);
+  // disable.every((element) => console.log(element)); // newEmployee is not iterable
+  // newEmployee.every((element) => console.log(element)); // newEmployee.every is not a function
+
   const submit =
     !newEmployee.firstName ||
     !newEmployee.lastName ||
@@ -54,12 +69,12 @@ export default function Form() {
     !newEmployee.stateAbbrev ||
     !newEmployee.startDate ||
     !newEmployee.department ? (
-      <button type="submit" className="add-employee-button" disabled>
-        Add an employee
+      <button type="submit" className="form-newEmployee--submit" disabled>
+        Save
       </button>
     ) : (
-      <button type="submit" className="add-employee-button">
-        Add an employee
+      <button type="submit" className="form-newEmployee--submit">
+        Save
       </button>
     );
 
@@ -81,6 +96,7 @@ export default function Form() {
 
     // COMPLETE / CORRECT DATA
     newEmployee.id = employeesList.length;
+    newEmployee.dateOfBirth = newEmployee.dateOfBirth.replace(/-/g, '/');
 
     // STORE DATA
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList));
@@ -93,17 +109,28 @@ export default function Form() {
   };
 
   return (
-    <form action="" id="add-employee-form" onSubmit={handleSubmit}>
-      <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
+    <form action="" className="form-newEmployee" onSubmit={handleSubmit}>
+      <img
+        className="form-newEmployee--ico"
+        src={icoAdd}
+        alt="add employee icon"
+      />
 
-      <section className="form-data">
+      <section className="form-newEmployee--data">
+        <fieldset
+          id="addressContainer"
+          className="form-newEmployee--addressContainer"
+        >
+          <legend className="form-newEmployee--addressGroup">Address</legend>
+        </fieldset>
+
         {INPUT_DATA.map((data, index) => (
           <Input
-            className={data.id}
             key={index}
+            type={data.type}
+            className={data.className}
             htmlFor={data.id}
             label={data.label}
-            type={data.type}
             id={data.id}
             value={newEmployee[index]}
             handleChange={handleChange}
@@ -111,13 +138,26 @@ export default function Form() {
           />
         ))}
 
-        {DROPDOWN_DATA.map((data, index) => (
-          <Dropdown
-            className={data.id}
+        {/* {DATEPICKER_DATA.map((data, index) => (
+          <Datepicker
             key={index}
+            type={data.type}
+            className={data.id}
             htmlFor={data.id}
             label={data.label}
+            id={data.id}
+            startDate={newEmployee[index]}
+            setStartDate={(date) => setNewEmployee({ ...newEmployee, [data.id]: date })}
+          />
+        ))} */}
+
+        {DROPDOWN_DATA.map((data, index) => (
+          <Dropdown
+            key={index}
             type={data.type}
+            className={data.className}
+            htmlFor={data.id}
+            label={data.label}
             id={data.id}
             select={data.select}
             handleChange={handleChange}
@@ -131,8 +171,8 @@ export default function Form() {
         show={modal}
         close={toggle}
         title={'Confirmation'}
-        sub={'New collaborator'}
-        msg={'successfully registred'}
+        msgL1={'New collaborator'}
+        msgL2={'successfully registred'}
         btn1={'Add employee'}
         btn1ClassName={'return'}
         btn2={'Employees list'}

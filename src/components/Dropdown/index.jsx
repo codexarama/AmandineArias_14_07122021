@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Dropdown({ id, label, select, handleChange }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const isOpen = () => setIsVisible(!isVisible);
-
+/**
+ * Dropdown
+ *
+ * @param   {object}      props
+ * @param   {string}      props.className        [input wrapper className]
+ * @param   {string}      props.id               [label "html for" identifiant]
+ * @param   {string}      props.label            [label name]
+ * @param   {object}      props.select           [select data for mapping]
+ * @param   {function}    props.handleChange     [handling input change]
+ *
+ * @returns {Reactnode}   jsx injected in DOM
+ */
+export default function Dropdown({
+  className,
+  id,
+  label,
+  select,
+  handleChange,
+}) {
   return (
-    <div className={`input-wrapper ${id}`}>
+    <div className={`form-newEmployee--inputWrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
-      <select
-        className="dropdownList"
-        id={id}
-        onClick={isOpen}
-        onChange={handleChange}
-        required
-      >
+      <select className="dropdownList" id={id} onChange={handleChange} required>
         {select.map((data) => (
-          <option type="text" value={data.value} key={data.abbrev}>
+          <option
+            title="dropdownOption"
+            type="text"
+            value={data.value}
+            key={data.abbrev}
+          >
             {data.label}
           </option>
         ))}
@@ -23,3 +37,14 @@ export default function Dropdown({ id, label, select, handleChange }) {
     </div>
   );
 }
+
+/**
+ * Dropdown PROPTYPES
+ */
+Dropdown.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  select: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

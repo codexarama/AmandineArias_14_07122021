@@ -10,22 +10,6 @@
   background-color: var(--bg);
 }
 
-.modal-close {
-  position: absolute;
-  top: -15px;
-  right: -20px;
-  background: transparent;
-}
-
-.modal-close img {
-  width: 2rem;
-  transition: all 0.3s;
-}
-
-.modal-close img:hover {
-  transform: scale(1.1);
-}
-
 .modal-content {
   width: 30vw;
   height: auto;
@@ -33,10 +17,27 @@
   padding: 2rem;
   border-radius: 1rem;
   backdrop-filter: blur(5px);
-  box-shadow: var(--tertiary) 0 0 5px 1px;
+  box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px;
+  /* box-shadow: var(--secondary) 0 0 50px 0.1px; */
 }
 
-.modal-icon {
+.modal-content--close {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  background: transparent;
+}
+
+.modal-content--close img {
+  width: 2rem;
+  transition: all 0.3s;
+}
+
+.modal-content--close img:hover {
+  transform: scale(1.1);
+}
+
+.modal-content--icon {
   width: 2.5rem;
   display: block;
   margin: 1rem auto 2rem;
@@ -47,37 +48,35 @@
   border-bottom: 3px solid var(--tertiary);
 }
 
-.modal-title,
-.modal-msg {
+.modal-header--title {
   text-align: center;
-}
-
-.modal-title {
   color: var(--tertiary-constrast);
 }
 
-.modal-msg {
-  border-bottom: 1px solid var(--secondary);
+.modal-main--msg {
+  border-bottom: 1px solid var(--primary);
   padding: 2rem 0;
+  text-align: center;
 }
 
 .modal-footer {
   display: flex;
-  justify-content: space-between;;
+  justify-content: space-evenly;;
   padding-top: 2rem;
 }
 
-.modal-footer button {
+.modal-footer--btn1,
+.modal-footer--btn2 {
   background-color: transparent;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  color: var(--secondary);
+  color: var(--primary);
   font-weight: 600;
 }
 
 .return:hover,
 .redirect:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--light);
 }

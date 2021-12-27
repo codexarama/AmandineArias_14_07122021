@@ -1,31 +1,33 @@
 /* FORM */
-
-#add-employee-form {
+.form-newEmployee {
   width: 500px;
-  margin: 0 auto 2rem;
+  margin: 2rem auto;
   padding: 2.5rem 5rem;
   background: var(--light);
   border-radius: 0.5rem;
-  box-shadow: var(--tertiary) 0 0 5px 1px;
+  /* box-shadow: var(--secondary) 0 0 50px 0.1px; */
+  box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px;
 }
 
-.form-data {
-  display: flex;
-  flex-direction: column;
-}
-.add-employee-ico {
+.form-newEmployee--ico {
   width: 2.5rem;
   display: block;
   margin: 0 auto 2.5rem;
 }
 
-.input-wrapper {
+.form-newEmployee--data {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-newEmployee--inputWrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
 }
 
+/* INPUTS */
 .firstName {
   order: 1;
 }
@@ -38,69 +40,86 @@
   order: 3;
 }
 
-.street {
-  order: 4;
-}
-
-.city {
+.startDate {
   order: 5;
 }
 
-.zipCode {
+.department {
   order: 6;
 }
 
-.stateAbbrev {
-  order: 7;
-}
-
-.startDate {
-  order: 8;
-}
-
-.department {
-  order: 9;
-}
-
-.input-wrapper label {
+.form-newEmployee--inputWrapper label {
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
-.input-wrapper input,
+.form-newEmployee--inputWrapper input,
 select {
   padding: 5px;
   border: none;
   border-bottom: 2px solid var(--tertiary);
-  border-radius: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
   color: var(--tertiary-constrast);
   font-size: 1rem;
+  font-weight: 100;
 }
 
-.input-wrapper select:focus {
+.form-newEmployee--inputWrapper select::-webkit-scrollbar {
+  width: 5px;
+}
+
+.form-newEmployee--inputWrapper select::-webkit-scrollbar-thumb {
+  background: var(--light);
+}
+
+.form-newEmployee--inputWrapper select:focus {
   outline: none;
   background-color: var(--tertiary);
   color: var(--light);
 }
 
+.form-newEmployee--inputWrapper select:focus option:checked {
+  background: var(--secondary) !important;
+}
+
 /* CHANGER L'ARRIERE PLAN BLEU AU HOVER */
-
-/* .input-wrapper select option:hover {
-  background-color: var(--secondary)!important;;
+/* NE FONCTIONNE PAS */
+/* .form-newEmployee--inputWrapper select option:hover {
+  background: #ff9500 -webkit-linear-gradient(bottom, #ff9500 0%, #ff9500 100%);
 } */
 
-/* .input-wrapper select > option :hover {
-  background-color: var(--secondary);
-} */
+/* ADDRESS GROUP */
+.form-newEmployee--addressContainer {
+  position: relative;
+  order: 4;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--disabled);
+  /* border: 1px solid antiquewhite; */
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+  background-color: var(--disabled);
+  /* background-color: antiquewhite; */
+}
 
-/* .input-wrapper option:hover {
-  background-color: var(--secondary);
-} */
+.form-newEmployee--addressGroup{
+  position: absolute;
+  top: -1.25rem;
+  right: -1px;
+  font-weight: 100;
+  padding: 0 0.5rem;
+  background-color: var(--disabled);
+  /* background-color: antiquewhite; */
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: 'Open Sans Condensed';
+  color: var(--primary);
+  text-align: right;
+}
 
-.add-employee-button {
+/* SUBMIT */
+.form-newEmployee--submit {
   display: block;
   margin: 2rem auto 0;
-  width: 30%;
+  width: 15%;
   padding: 10px;
   font-size: 1rem;
   font-weight: bold;
@@ -110,10 +129,10 @@ select {
   color: var(--light);
 }
 
-.add-employee-button:disabled,
-.add-employee-button[disabled],
-.add-employee-button:disabled:hover,
-.add-employee-button[disabled]:hover {
+.form-newEmployee--submit:disabled,
+.form-newEmployee--submit[disabled],
+.form-newEmployee--submit:disabled:hover,
+.form-newEmployee--submit[disabled]:hover {
   background-color: var(--disabled);
   color: var(--tertiary);
   cursor: not-allowed;

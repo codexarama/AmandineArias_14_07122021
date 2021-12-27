@@ -1,5 +1,6 @@
 [
   {
+    "className": "stateAbbrev address",
     "id": "stateAbbrev",
     "label": "State",
     "type": "text",
@@ -307,6 +308,7 @@
     ]
   },
   {
+    "className": "department",
     "id": "department",
     "label": "Department",
     "type": "text",

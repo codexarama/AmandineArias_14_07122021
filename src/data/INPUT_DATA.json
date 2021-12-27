@@ -1,9 +1,48 @@
 [
-  { "id": "firstName", "label": "First name", "type": "text" },
-  { "id": "lastName", "label": "Last name", "type": "text" },
-  { "id": "dateOfBirth", "label": "Date of Birth", "type": "date" },
-  { "id": "street", "label": "Street", "type": "text" },
-  { "id": "city", "label": "City", "type": "text" },
-  { "id": "zipCode", "label": "Zip Code", "type": "text" },
-  { "id": "startDate", "label": "Start Date", "type": "date" }
+  {
+    "className": "firstName",
+    "id": "firstName",
+    "label": "First name",
+    "type": "text"
+  },
+  {
+    "className": "lastName",
+    "id": "lastName",
+    "label": "Last name",
+    "type": "text"
+  },
+  {
+    "className": "dateOfBirth",
+    "id": "dateOfBirth",
+    "label": "Date of Birth",
+    "type": "date",
+    "min": "01/01/1950",
+    "max": null
+  },
+  {
+    "className": "street address",
+    "id": "street",
+    "label": "Street",
+    "type": "text"
+  },
+  {
+    "className": "city address",
+    "id": "city",
+    "label": "City",
+    "type": "text"
+  },
+  {
+    "className": "zipCode address",
+    "id": "zipCode",
+    "label": "Zip Code",
+    "type": "text"
+  },
+  {
+    "className": "startDate",
+    "id": "startDate",
+    "label": "Start Date",
+    "type": "date",
+    "min": null,
+    "max": null
+  }
 ]

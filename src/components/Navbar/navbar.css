@@ -17,11 +17,11 @@ nav {
     margin-left: 1rem;
   }
 
-  .nav-logo-design {
+  .nav-logo--design {
     width: 2.5rem;
   }
 
-  .nav-logo-brand {
+  .nav-logo--brand {
     width: 15rem;
   }
 
@@ -29,27 +29,26 @@ nav {
     width: 450px;
   }
 
-  .nav-menu h1 {
+  .nav-menu--title {
     padding-right: 1rem;
-    color: var(--secondary);
   }
 
-  .nav-menu-choice {
+  .nav-menu--choice {
     width: 90px;
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
-    color: var(--secondary);
+    color: var(--primary);
   }
 
- .active {
-  display: none;
-  }
-
-  .nav-menu-choice:hover {
-    background: var(--secondary);
+  .nav-menu--choice:hover {
+    background: var(--primary);
     color: var(--tertiary);
   }
+
+  .active {
+    display: none;
+    }
 
   .nav-ico {
     width: 1.5rem;

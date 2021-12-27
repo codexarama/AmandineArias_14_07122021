@@ -2,51 +2,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap');
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--dark);
-}
-
-h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
 
 /* COLORS */
 :root {
   --bg: #fafbf9;
-  --primary: #483e37;
-  --secondary: #6c6753;
-  --tertiary: #cad3ae;
+  --dark: #483e37;
+  --primary: #6c6753;
+  --secondary: #8d9379;
   --tertiary-constrast: #bec7a3;
+  --tertiary: #cad3ae;
   --light: #fff;
-  --dark: #24221c;
   --error: #f95;
   --disabled: #eef1e3;
   --table-row: #eef1e3;
 }
 
+/* BODY */
 body {
   background: #fafbf9;
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--dark);
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary) !important;
+  /* background-color: var(--tertiary-constrast) !important; */
+  /* border: 2px solid var(--tertiary); */
+}
+
+/* TITLES */
 h1,
 h2,
 h3 {
   text-align: center;
-  font-family: Open Sans Condensed;
+  font-family:  'Open Sans Condensed', sans-serif;
 }
 
+h1 {
+  color: var(--secondary);
+}
+
+h2 {
+  color: var(--primary);
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+}
+
+/* ELEMENTS */
 button {
   border: none;
 }
+
+select {
+  outline: none;
+}
+
 input:focus,
 select:focus,
-textarea:focus,
 button:focus {
   outline: none;
 }
 
-a {
-  text-decoration: none;
+/* ERROR message */
+.error-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
