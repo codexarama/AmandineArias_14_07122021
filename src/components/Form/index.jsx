@@ -55,11 +55,11 @@ export default function Form() {
     !newEmployee.startDate ||
     !newEmployee.department ? (
       <button type="submit" className="add-employee-button" disabled>
-        Add an employee
+        Save
       </button>
     ) : (
       <button type="submit" className="add-employee-button">
-        Add an employee
+        Save
       </button>
     );
 
@@ -97,10 +97,14 @@ export default function Form() {
       <img className="add-employee-ico" src={icoAdd} alt="add employee icon" />
 
       <section className="form-data">
+        <fieldset id="addressContainer">
+          <legend className="addressGroup">Address</legend>
+        </fieldset>
+
         {INPUT_DATA.map((data, index) => (
           <Input
-            className={data.id}
             key={index}
+            className={data.className}
             htmlFor={data.id}
             label={data.label}
             type={data.type}
@@ -113,8 +117,8 @@ export default function Form() {
 
         {DROPDOWN_DATA.map((data, index) => (
           <Dropdown
-            className={data.id}
             key={index}
+            className={data.className}
             htmlFor={data.id}
             label={data.label}
             type={data.type}
@@ -131,8 +135,8 @@ export default function Form() {
         show={modal}
         close={toggle}
         title={'Confirmation'}
-        sub={'New collaborator'}
-        msg={'successfully registred'}
+        msgL1={'New collaborator'}
+        msgL2={'successfully registred'}
         btn1={'Add employee'}
         btn1ClassName={'return'}
         btn2={'Employees list'}
