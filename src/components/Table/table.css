@@ -1,117 +1,118 @@
-#table {
+.table {
   width: 90%;
   margin: auto;
 }
 
 /* HEADER */
 /* FILTER OPTIONS */
-header {
+.table-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
-header > * {
+.table-header > * {
   flex: 1 1 0;
 }
 
-.show-entries select {
+.table-header--entries select {
   cursor: pointer;
-  margin: 5px;
-  border-radius: 5px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--primary);
   color: var(--primary);
   font-size: small;
 }
 
-h3 {
+.table-header--title {
   color: var(--tertiary-constrast);
-  text-shadow: 0 0 0.5px var(--primary);
+  text-shadow: 0 0 0 0.25rem var(--primary);
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.search {
+.table-header--search {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.search-icon {
-  width: 15px;
-  margin-right: 5px;
+.table-header--search img {
+  width: 1rem;
+  margin-right: 0.25rem;
 }
 
-.search input {
-  margin: 0 0.5rem;
+.table-header--search input {
+  margin-left: 0.5rem;
+  padding: 0.25rem;
   border: 1px solid var(--primary);
-  border-radius: 5px;
+  border-radius: 0.25rem;
 }
 
 /* MAIN  */
 /* EMPLOYEES LIST TABLE */
-#employees {
+.table-main--list {
   width: 100%;
   margin: 2rem auto;
   border-collapse: separate;
   border-radius: 0.5rem;
   background-color: transparent;
-  box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px;
-  /* box-shadow: var(--secondary) 0 0 50px 0.1px; */
+  box-shadow: var(--tertiary-constrast) 0 0 5rem 0.1px;
+  /* box-shadow: var(--secondary) 0 0 5rem 0.1px; */
 }
 
-#employees thead :nth-child(2) > * {
+.table-main--list thead :nth-child(2) > * {
   font-family: 'Open Sans Condensed';
   color: var(--tertiary);
 }
 
-#employees thead :first-child :first-child {
+.table-main--list thead :first-child :first-child {
   border-top-left-radius: 0.5rem;
 }
 
-#employees thead :first-child :last-child {
+.table-main--list thead :first-child :last-child {
   border-top-right-radius: 0.5rem;
 }
 
-#employees th {
-  padding: 5px;
+.table-main--list th {
+  padding: 0.25rem;
   background-color: var(--primary);
   /* background-color: var(--secondary); */
   color: var(--light);
 }
 
-#employees tbody {
+.table-main--list tbody {
   font-weight: 100;
 }
 
-#employees tbody :last-child :first-child {
+.table-main--list tbody :last-child :first-child {
   border-bottom-left-radius: 0.5rem;
 }
 
-#employees tbody :last-child :last-child {
+.table-main--list tbody :last-child :last-child {
   border-bottom-right-radius: 0.5rem;
 }
 
-#employees td {
-  padding: 5px 10px;
+.table-main--list td {
+  padding: 0.25rem 0.5rem;
 }
 
-#employees tbody tr :first-child {
+.table-main--list tbody tr :first-child {
   text-align: right;
 }
 
-#employees tbody tr :nth-child(4),
-#employees tbody tr :nth-child(7),
-#employees tbody tr :nth-child(8),
-#employees tbody tr :nth-child(9) {
+.table-main--list tbody tr :nth-child(4),
+.table-main--list tbody tr :nth-child(7),
+.table-main--list tbody tr :nth-child(8),
+.table-main--list tbody tr :nth-child(9) {
   text-align: center;
 }
 
-#employees tr:nth-child(even) {
+.table-main--list tr:nth-child(even) {
   background-color: var(--table-row);
 }
 
-#employees tr:hover,
-#employees tr:focus {
+.table-main--list tr:hover,
+.table-main--list tr:focus {
   background-color: var(--tertiary);
 }
 
@@ -119,29 +120,26 @@ h3 {
 /* TABLE NAVIGATION */
 .table-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.table-footer * {
-  margin: 5px;
-}
-
-.table-footer--btn {
+.table-nav--btn {
   cursor: pointer;
-  padding: 5px 10px;
+  margin: 0.25rem;
+  padding: 0.25rem 0.5rem;
   background-color: var(--tertiary);
-  border-radius: 5px;
+  border-radius: 0.25rem;
   border: 1px solid var(--primary);
   color: var(--primary);
   line-height: 1.25rem;
 }
 
-.table-footer--btn:hover {
+.table-nav--btn:hover {
   background-color: var(--tertiary-constrast);
 }
 
-.table-footer--btn:disabled {
+.table-nav--btn:disabled {
   background-color: var(--disabled);
 }
