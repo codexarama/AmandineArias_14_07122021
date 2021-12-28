@@ -1,62 +1,102 @@
-# Getting Started with Create React App
+# WealthHealth - HRnet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Projet fictif de formation n°14/14 | OpenClassrooms
 
-## Available Scripts
+> PROBLEMATIQUE
 
-In the project directory, you can run:
+Utilisation en interne d'une application de gestion RH représentant 90% de la dette technologique de l'entreprise
 
-### `yarn start`
+> BESOINS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Convertir l'application HRnet (code source 100% JQuery) en une application React
+- Convertir les plugins sources : 
+  - sélecteur de date
+  - fenêtre modale
+  - menus déroulants
+  - tables de données
+- Comparer de performances entre l'ancienne et la nouvelle version
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Compétences développées
 
-### `yarn test`
+- [x] Refondre une application pour réduire la dette technique `JQUERY to REACT`
+- [x] Implémenter avec la programmation fonctionnelle `JAVASCRIPT`
+- [x] Créer un plugin et publier sa propre bibliothèque `REACT | NPM`
+- [x] Proposer un design graphique complet, harmonieux et cohérent avec l'identité de l'entreprise
+- [x] Déployer une application front-end `NPM`
+- [x] Analyser la performance d'une application web `LIGHTHOUSE`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Ressources fournies
 
-### `yarn build`
+* [HRnet : code source](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
+* [Issues](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Bibliothèques
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    REACT
+    CODEXARAMA-modal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `yarn eject`
+### Editeur recommandé
 
-## Learn More
+* [Visual Studio code](https://code.visualstudio.com/)
 
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prérequis
 
-[React documentation](https://reactjs.org/).
+* [Git](https://git-scm.com/) pour cloner les repos
+* [nodeJS](https://nodejs.org/fr/) (version 17.3.0) pour exécuter les commandes
+* [npm](https://www.npmjs.com/) (version 8.3.0) pour lancer l'application
 
-### Code Splitting
+### Dépendances
 
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 17.0.2)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.0.2)
+*  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
+*  [react-datepicker](https://reactdatepicker.com/) (version 4.5.0)
+*  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
+*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.7.0)
 
-### Analyzing the Bundle Size
+### Lancement du front-end
 
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [ ] Cloner le repo : `git clone https://github.com/codexarama/AmandineArias_14_07122021.git`
+- [ ] Aller dans ce dossier : `cd AmandineArias_14_07122021`
+- [ ] Installer ses dépendances : `npm install`
+- [ ] Lancer l'application : `npm start`
 
-### Making a Progressive Web App
+```bash
+URL de visualisation du rendu web : http://localhost:3000
+```
 
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+___
 
-### Advanced Configuration
+## Installation (_english version_)
 
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Recommanded IDE
 
-### Deployment
+* [Visual Studio code](https://code.visualstudio.com/)
 
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Prerequisites
 
-### `yarn build` fails to minify
+* [Git](https://git-scm.com/) to clone repositories
+* [nodeJS](https://nodejs.org/fr/) to run commands
+* [npm](https://www.npmjs.com/) to run application
 
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Dependances
+
+*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 17.0.2)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.0.2)
+*  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
+*  [react-datepicker](https://reactdatepicker.com/) (version 4.5.0)
+*  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
+*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.7.0)
+
+### Installing and launching front-end
+
+- [ ] Clone the repository: `git clone https://github.com/codexarama/ArgentBank.git`
+- [ ] Move to this folder: `cd ArgentBank`
+- [ ] Install dependencies: `npm install`
+- [ ] Launch application: `npm start`
+
+```bash
+Front-end is now rendered at URL http://localhost:3000
+```
