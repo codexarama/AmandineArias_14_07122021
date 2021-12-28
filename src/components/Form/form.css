@@ -5,8 +5,8 @@
   padding: 2.5rem 5rem;
   background: var(--light);
   border-radius: 0.5rem;
-  /* box-shadow: var(--secondary) 0 0 50px 0.1px; */
-  box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px; */
 }
 
 .form-newEmployee--ico {
@@ -74,12 +74,12 @@ select {
 
 .form-newEmployee--inputWrapper select:focus {
   outline: none;
-  background-color: var(--tertiary);
+  background-color: var(--secondary);
   color: var(--light);
 }
 
 .form-newEmployee--inputWrapper select:focus option:checked {
-  background: var(--secondary) !important;
+  background: var(--primary) !important;
 }
 
 /* CHANGER L'ARRIERE PLAN BLEU AU HOVER */
