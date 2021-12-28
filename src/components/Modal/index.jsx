@@ -1,6 +1,4 @@
 import { createPortal } from 'react-dom';
-import icoClose from '../../assets/ico-close.png';
-import icoConfirm from '../../assets/ico-user-confirm.svg';
 
 import PropTypes from 'prop-types';
 
@@ -26,6 +24,8 @@ import './modal.css';
 export default function Modal({
   show,
   close,
+  x,
+  icon,
   title,
   msgL1,
   msgL2,
@@ -41,11 +41,11 @@ export default function Modal({
         <main className="modal">
           <section className="modal-content">
             <button className="modal-content--close" onClick={close}>
-              <img src={icoClose} alt="close icon" />
+              <img src={x} alt="close icon" />
             </button>
             <img
               className="modal-content--icon"
-              src={icoConfirm}
+              src={icon}
               alt="confirm employee icon"
             />
             <header className="modal-header">

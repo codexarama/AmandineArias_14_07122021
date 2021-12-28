@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import icoAdd from '../../assets/ico-user-add.svg';
+import icoClose from '../../assets/ico-close.svg';
+import icoConfirm from '../../assets/ico-user-confirm.svg';
+
 
 import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import INPUT_DATA from '../../data/INPUT_DATA.json';
@@ -170,6 +173,8 @@ export default function Form() {
       <Modal
         show={modal}
         close={toggle}
+        x={icoClose}
+        icon={icoConfirm}
         title={'Confirmation'}
         msgL1={'New collaborator'}
         msgL2={'successfully registred'}
