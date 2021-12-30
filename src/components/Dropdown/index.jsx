@@ -23,14 +23,14 @@ export default function Dropdown({
     <div className={`form-newEmployee--inputWrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
       <select className="dropdownList" id={id} onChange={handleChange} required>
-        {select.map((data) => (
+        {select.map((item) => (
           <option
             title="dropdownOption"
             type="text"
-            value={data.value}
-            key={data.abbrev}
+            value={item.value}
+            key={item.abbrev}
           >
-            {data.label}
+            {item.label}
           </option>
         ))}
       </select>
