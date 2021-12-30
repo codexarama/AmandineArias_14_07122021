@@ -10,7 +10,7 @@
   background-color: var(--bg);
 }
 
-.modal-content {
+.modal-container {
   width: 30vw;
   height: auto;
   background-color: var(--light);
@@ -18,10 +18,9 @@
   border-radius: 1rem;
   backdrop-filter: blur(5px);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  /* box-shadow: var(--tertiary-constrast) 0 0 50px 0.1px; */
 }
 
-.modal-content--close {
+.modal-container--close {
   position: absolute;
   top: -15px;
   right: -20px;
@@ -29,16 +28,16 @@
   border: none;
 }
 
-.modal-content--close img {
+.modal-container--close img {
   width: 2rem;
   transition: all 0.3s;
 }
 
-.modal-content--close img:hover {
+.modal-container--close img:hover {
   transform: scale(1.1);
 }
 
-.modal-content--icon {
+.modal-container--icon {
   width: 2.5rem;
   display: block;
   margin: 1rem auto 2rem;
@@ -46,24 +45,43 @@
 
 .modal-header {
   position: relative;
-  border-bottom: 3px solid var(--tertiary);
+  /* border-bottom: 3px solid var(--tertiary); */
+}
+
+.modal-header--icon {
+  width: 2.5rem;
+  display: block;
+  margin: 1rem auto 2rem;
+}
+
+.modal-header--separator {
+  margin-bottom: 2rem;
+  height: 3px;
+  border: none;
+  background-color: var(--tertiary);
 }
 
 .modal-header--title {
   text-align: center;
-  color: var(--tertiary-constrast);
+  color: var(--tertiary);
 }
 
 .modal-main--msg {
-  border-bottom: 1px solid var(--primary);
-  padding: 2rem 0;
   text-align: center;
+}
+
+.modal-footer--separator {
+  margin-top: 2rem;
+  height: 0.5px;
+  border: none;
+  background-color: var(--primary);
 }
 
 .modal-footer {
   display: flex;
-  justify-content: space-evenly;;
+  justify-content: space-evenly;
   padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 .modal-footer--btn1,
@@ -76,8 +94,20 @@
   font-weight: 600;
 }
 
-.return:hover,
-.redirect:hover {
+.modal-footer--btn1:hover,
+.modal-footer--btn2:hover {
   background-color: var(--primary);
   color: var(--light);
+}
+
+.disabled,
+.disabled:hover {
+  border: 1px solid  var(--diabled-text);
+  background-color: var(--disabled);
+  color: var(--diabled-text);
+  cursor: not-allowed;
+}
+
+.hide {
+  display: none;
 }
