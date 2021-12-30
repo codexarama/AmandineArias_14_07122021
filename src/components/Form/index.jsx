@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import icoAdd from '../../assets/ico-user-add.svg';
-import icoClose from '../../assets/ico-close.svg';
-import icoConfirm from '../../assets/ico-user-confirm.svg';
-
+import close from '../../assets/ico-close.svg';
+import confirm from '../../assets/ico-user-confirm.svg';
 
 import EMPLOYEES_LIST from '../../data/MOCK_DATA.json';
 import INPUT_DATA from '../../data/INPUT_DATA.json';
@@ -32,13 +31,13 @@ export default function Form() {
     redirectTo('/employees');
   }
 
-  useEffect(() => {
-    if (modal) {
-      setTimeout(() => {
-        redirectTo('/employees');
-      }, 8000);
-    }
-  }, [modal, redirectTo]);
+  // useEffect(() => {
+  //   if (modal) {
+  //     setTimeout(() => {
+  //       redirectTo('/employees');
+  //     }, 5000);
+  //   }
+  // }, [modal, redirectTo]);
 
   // FORM SETTINGS
   const initialState = {
@@ -55,13 +54,6 @@ export default function Form() {
 
   const [newEmployee, setNewEmployee] = useState(initialState);
 
-  // CONDITIONS TO ENABLE SUBMIT (ELSE = DISABLE)
-  // const disable = {...newEmployee};
-  // const disable = [...newEmployee];
-  // console.log(disable);
-  // disable.every((element) => console.log(element)); // newEmployee is not iterable
-  // newEmployee.every((element) => console.log(element)); // newEmployee.every is not a function
-
   const submit =
     !newEmployee.firstName ||
     !newEmployee.lastName ||
@@ -69,8 +61,8 @@ export default function Form() {
     !newEmployee.street ||
     !newEmployee.city ||
     !newEmployee.zipCode ||
-    !newEmployee.stateAbbrev ||
     !newEmployee.startDate ||
+    !newEmployee.stateAbbrev ||
     !newEmployee.department ? (
       <button type="submit" className="form-newEmployee--submit" disabled>
         Save
@@ -100,15 +92,17 @@ export default function Form() {
     // COMPLETE / CORRECT DATA
     newEmployee.id = employeesList.length;
     newEmployee.dateOfBirth = newEmployee.dateOfBirth.replace(/-/g, '/');
+    newEmployee.startDate = newEmployee.startDate.replace(/-/g, '/');
 
     // STORE DATA
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList));
 
-    // RESET FORM
-    setNewEmployee(initialState);
-
     // OPEN MODAL
     setModal(!modal);
+
+    // RESET FORM
+    setNewEmployee({ ...newEmployee }, e.target.reset());
+    setNewEmployee(initialState);
   };
 
   return (
@@ -173,16 +167,23 @@ export default function Form() {
       <Modal
         show={modal}
         close={toggle}
-        x={icoClose}
-        icon={icoConfirm}
-        title={'Confirmation'}
-        msgL1={'New collaborator'}
-        msgL2={'successfully registred'}
-        btn1={'Add employee'}
-        btn1ClassName={'return'}
-        btn2={'Employees list'}
-        btn2ClassName={'redirect'}
+        x={close}
+        icon={confirm}
+        // hideIcon={true}
+        title="Confirmation"
+        // hideTitle={true}
+        msgL1="New collaborator"
+        msgL2="successfully integrated"
+        // hideMsgL2 ={true}
+        btn1="Add an employee"
+        // disableBtn1={true}
+        // hideBtn1 ={true}
+        btn2="Employees list"
         redirect={goTo}
+        // disableBtn2 ={true}
+        // hideBtn2 ={true}
+        // hideHeader={true}
+        // hideFooter={true}
       />
     </form>
   );
