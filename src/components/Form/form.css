@@ -37,6 +37,9 @@
   order: 3;
 }
 
+/* address container
+order: 4 */
+
 .startDate {
   order: 5;
 }
@@ -50,6 +53,12 @@
 }
 
 /* INPUTS STYLES */
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  filter: invert(0.4);
+}
+
 .form-newEmployee--inputWrapper label {
   font-weight: 700;
   color: var(--primary);
@@ -103,7 +112,7 @@ select {
   /* background-color: antiquewhite; */
 }
 
-.form-newEmployee--addressGroup{
+.form-newEmployee--addressGroup {
   position: absolute;
   top: -1.25rem;
   right: -1px;
