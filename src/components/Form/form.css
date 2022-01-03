@@ -1,5 +1,7 @@
 /* FORM */
 .form-newEmployee {
+  display: flex;
+  flex-direction: column;
   width: 500px;
   margin: 2rem auto;
   padding: 2.5rem 5rem;
@@ -15,11 +17,6 @@
   margin: 0 auto 2.5rem;
 }
 
-.form-newEmployee--data {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-newEmployee--inputWrapper {
   display: flex;
   flex-direction: column;
@@ -27,7 +24,7 @@
   margin-bottom: 1rem;
 }
 
-/* INPUTS */
+/* INPUTS ORDER */
 .firstName {
   order: 1;
 }
@@ -40,12 +37,26 @@
   order: 3;
 }
 
+/* address container
+order: 4 */
+
 .startDate {
   order: 5;
 }
 
 .department {
   order: 6;
+}
+
+.submit {
+  order: 7;
+}
+
+/* INPUTS STYLES */
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  filter: invert(0.4);
 }
 
 .form-newEmployee--inputWrapper label {
@@ -101,7 +112,7 @@ select {
   /* background-color: antiquewhite; */
 }
 
-.form-newEmployee--addressGroup{
+.form-newEmployee--addressGroup {
   position: absolute;
   top: -1.25rem;
   right: -1px;

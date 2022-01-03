@@ -22,7 +22,13 @@ export default function Dropdown({
   return (
     <div className={`form-newEmployee--inputWrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
-      <select className="dropdownList" id={id} onChange={handleChange} required>
+      <select
+        className="dropdownList"
+        id={id}
+        onChange={handleChange}
+        aria-required="true"
+        required
+      >
         {select.map((item) => (
           <option
             title="dropdownOption"
