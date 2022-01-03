@@ -1,5 +1,7 @@
 /* FORM */
 .form-newEmployee {
+  display: flex;
+  flex-direction: column;
   width: 500px;
   margin: 2rem auto;
   padding: 2.5rem 5rem;
@@ -15,11 +17,6 @@
   margin: 0 auto 2.5rem;
 }
 
-.form-newEmployee--data {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-newEmployee--inputWrapper {
   display: flex;
   flex-direction: column;
@@ -27,7 +24,7 @@
   margin-bottom: 1rem;
 }
 
-/* INPUTS */
+/* INPUTS ORDER */
 .firstName {
   order: 1;
 }
@@ -48,6 +45,11 @@
   order: 6;
 }
 
+.submit {
+  order: 7;
+}
+
+/* INPUTS STYLES */
 .form-newEmployee--inputWrapper label {
   font-weight: 700;
   color: var(--primary);

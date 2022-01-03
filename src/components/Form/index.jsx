@@ -41,11 +41,11 @@ export default function Form() {
     !newEmployee.startDate ||
     !newEmployee.stateAbbrev ||
     !newEmployee.department ? (
-      <button type="submit" className="form-newEmployee--submit" disabled>
+      <button type="submit" className="submit form-newEmployee--submit" disabled>
         Save
       </button>
     ) : (
-      <button type="submit" className="form-newEmployee--submit">
+      <button type="submit" className="submit form-newEmployee--submit">
         Save
       </button>
     );
@@ -87,44 +87,41 @@ export default function Form() {
         alt="add employee icon"
       />
 
-      <section className="form-newEmployee--data">
-        <fieldset
-          id="addressContainer"
-          className="form-newEmployee--addressContainer"
-        >
-          <legend className="form-newEmployee--addressGroup">Address</legend>
-        </fieldset>
+      <fieldset
+        id="addressContainer"
+        className="form-newEmployee--addressContainer"
+      >
+        <legend className="form-newEmployee--addressGroup">Address</legend>
+      </fieldset>
 
-        {INPUT_DATA.map((data, index) => (
-          <Input
-            key={index}
-            type={data.type}
-            className={data.className}
-            htmlFor={data.id}
-            label={data.label}
-            id={data.id}
-            value={newEmployee[index]}
-            handleChange={handleChange}
-            autoComplete="off"
-          />
-        ))}
+      {INPUT_DATA.map((data, index) => (
+        <Input
+          key={index}
+          type={data.type}
+          className={data.className}
+          htmlFor={data.id}
+          label={data.label}
+          id={data.id}
+          value={newEmployee[index]}
+          handleChange={handleChange}
+          autoComplete="off"
+        />
+      ))}
 
-        {DROPDOWN_DATA.map((data, index) => (
-          <Dropdown
-            key={index}
-            type={data.type}
-            className={data.className}
-            htmlFor={data.id}
-            label={data.label}
-            id={data.id}
-            select={data.select}
-            handleChange={handleChange}
-          />
-        ))}
-      </section>
+      {DROPDOWN_DATA.map((data, index) => (
+        <Dropdown
+          key={index}
+          type={data.type}
+          className={data.className}
+          htmlFor={data.id}
+          label={data.label}
+          id={data.id}
+          select={data.select}
+          handleChange={handleChange}
+        />
+      ))}
 
       {submit}
-
     </form>
   );
 }
