@@ -21,26 +21,43 @@ export default function Home() {
     minAge = new Date();
     minAge.setFullYear(minAge.getFullYear() - 68);
     minAge = minAge.toISOString().split('T')[0];
-    document.getElementById('dateOfBirth').setAttribute('min', minAge);
 
     let maxAge; // elder than 16 years old
     maxAge = new Date();
     maxAge.setFullYear(maxAge.getFullYear() - 16);
     maxAge = maxAge.toISOString().split('T')[0];
-    document.getElementById('dateOfBirth').setAttribute('max', maxAge);
 
     // HANDLE MIN / MAX DATE FOR START DATE INPUT
     let minStartDate; // first day of the current month
     minStartDate = new Date();
     minStartDate.setMonth(minStartDate.getMonth() - 1);
     minStartDate = minStartDate.toISOString().split('T')[0];
-    document.getElementById('startDate').setAttribute('min', minStartDate);
 
     let maxStartDate; // current day
     maxStartDate = new Date();
     maxStartDate.setDate(maxStartDate.getDate());
     maxStartDate = maxStartDate.toISOString().split('T')[0];
-    document.getElementById('startDate').setAttribute('max', maxStartDate);
+
+    // HANDLE SET MULTIPLE ATTRIBUTES
+    function setAttributes(el, attrs) {
+      for (var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+      }
+    }
+
+    // SET DATE OF BIRTH MIN / MAX ATTRIBUTES
+    const dateOfBirth = document.getElementById('dateOfBirth')
+    setAttributes(dateOfBirth, {
+      min: minAge,
+      max: maxAge,
+    });
+
+    // SET START DATE MIN / MAX ATTRIBUTES
+    const startDate = document.getElementById('startDate')
+    setAttributes(startDate, {
+      min: minStartDate,
+      max: maxStartDate,
+    });
   });
 
   return (
