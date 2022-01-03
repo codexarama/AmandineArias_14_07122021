@@ -14,26 +14,26 @@ import './navbar.css';
 export default function Navbar() {
   return (
     <>
-      <nav>
-        <div className="nav-item nav-brand">
+      <nav aria-labelledby='nav-title'>
+        <div aria-label="Wealth Health logo" className="nav-item nav-brand">
           <img
             className="nav-logo--design"
             src={logoDesign}
-            alt="Health Wealth logo design"
+            alt="Wealth Health logo design"
           />
           <img
             className="nav-logo--brand"
             src={logoBrand}
-            alt="Health Wealth logo brand name"
+            alt="Wealth Health logo brand name"
           />
         </div>
-        <div className="nav-item nav-menu">
-          <h1 className="nav-menu--title">HRnet Employees</h1>
+        <div role="navigation"  className="nav-item nav-menu">
+          <h1 id='nav-title' className="nav-menu--title">HRnet Employees</h1>
           <NavLink to="/employees" className="nav-menu--choice">
             <img
               className="nav-ico"
               src={icoList}
-              alt="Health Wealth logo brand name"
+              alt="Wealth Health logo brand name"
             />
             <span>Current</span>
           </NavLink>
@@ -41,7 +41,7 @@ export default function Navbar() {
             <img
               className="nav-ico"
               src={icoAdd}
-              alt="Health Wealth logo brand name"
+              alt="Wealth Health logo brand name"
             />
             <span>Create</span>
           </NavLink>
