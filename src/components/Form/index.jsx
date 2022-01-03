@@ -31,6 +31,7 @@ export default function Form() {
 
   const [newEmployee, setNewEmployee] = useState(initialState);
 
+  // DISABLE / ENABLE SUBMIT BUTTON
   const submit =
     !newEmployee.firstName ||
     !newEmployee.lastName ||
@@ -41,11 +42,20 @@ export default function Form() {
     !newEmployee.startDate ||
     !newEmployee.stateAbbrev ||
     !newEmployee.department ? (
-      <button type="submit" className="submit form-newEmployee--submit" disabled>
+      <button
+        type="submit"
+        className="submit form-newEmployee--submit"
+        aria-disabled="true"
+        disabled
+      >
         Save
       </button>
     ) : (
-      <button type="submit" className="submit form-newEmployee--submit">
+      <button
+        type="submit"
+        className="submit form-newEmployee--submit"
+        aria-disabled="false"
+      >
         Save
       </button>
     );
@@ -87,13 +97,6 @@ export default function Form() {
         alt="add employee icon"
       />
 
-      <fieldset
-        id="addressContainer"
-        className="form-newEmployee--addressContainer"
-      >
-        <legend className="form-newEmployee--addressGroup">Address</legend>
-      </fieldset>
-
       {INPUT_DATA.map((data, index) => (
         <Input
           key={index}
@@ -107,6 +110,13 @@ export default function Form() {
           autoComplete="off"
         />
       ))}
+
+      <fieldset
+        id="addressContainer"
+        className="form-newEmployee--addressContainer"
+      >
+        <legend className="form-newEmployee--addressGroup">Address</legend>
+      </fieldset>
 
       {DROPDOWN_DATA.map((data, index) => (
         <Dropdown
