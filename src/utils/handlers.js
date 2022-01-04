@@ -9,8 +9,9 @@ var accessStyles = head.appendChild(document.createElement('style'));
 document.addEventListener('mousedown', () => {
   accessStyles.innerHTML = '* {box-shadow:none !important}';
 });
-document.addEventListener('keydown', () => {
-  accessStyles.innerHTML = '';
+document.addEventListener('keydown', (e) => {
+  // eslint-disable-next-line
+  if (e.keyCode == 9 || e.shiftKey) accessStyles.innerHTML = '';
 });
 
 // GETTING HTML ELEMENT(S)
@@ -29,7 +30,9 @@ export const getTags = (tag) => {
 
 // GETTING HTML NESTED TAGS
 export const getNestedTags = (tag1, index, tag2) => {
-  return [...document.getElementsByTagName(tag1)[index].getElementsByTagName(tag2)];
+  return [
+    ...document.getElementsByTagName(tag1)[index].getElementsByTagName(tag2),
+  ];
 };
 
 // MANAGING SET MULTIPLE ATTRIBUTES
