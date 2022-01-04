@@ -125,7 +125,7 @@ th:focus {
   transform: translate(-50%, -50%);
 }
 
-/* RESPONSIVE */
+/* ADAPTATIVE */
 @media screen and (max-width: 768px) {
   nav {
     width: unset;
