@@ -15,7 +15,6 @@ import { useNavigate } from 'react-router-dom';
 import { Modal, useModal } from 'codexarama-modal';
 import confirm from '../../assets/ico-user-confirm.svg';
 import close from '../../assets/ico-close.svg';
-// import 'codexarama-modal/dist/styles/modal.css';
 
 /**
  * Form
@@ -37,7 +36,7 @@ export default function Form() {
 
   const [newEmployee, setNewEmployee] = useState(initialState);
 
-  // DISABLE / ENABLE SUBMIT BUTTON
+  // DISABLE || ENABLE SUBMIT BUTTON
   const submit =
     !newEmployee.firstName ||
     !newEmployee.lastName ||
@@ -66,16 +65,11 @@ export default function Form() {
       </button>
     );
 
-  // ON CHANGE
-  const handleChange = (e) => {
-    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() });
-  };
-
   // GET DATA
   let employeesList =
     JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
 
-  // MODAL FEATURES
+  // MODAL MODULE SETTINGS
   const { isOpen, toggle } = useModal();
 
   const redirectTo = useNavigate();
@@ -83,27 +77,31 @@ export default function Form() {
     redirectTo('/employees');
   }
 
+  // ON CHANGE
+  const handleChange = (e) => {
+    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() });
+  };
+
   // ON SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // UPDATE DATA
+    // update data
     employeesList.push(newEmployee);
 
-    // COMPLETE / CORRECT DATA
+    // complete / correct data
     newEmployee.id = employeesList.length;
     newEmployee.dateOfBirth = newEmployee.dateOfBirth.replace(/-/g, '/');
     newEmployee.startDate = newEmployee.startDate.replace(/-/g, '/');
 
-    // STORE DATA
+    // store data
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList));
 
-    // RESET FORM
+    // reset form
     setNewEmployee({ ...newEmployee }, e.target.reset());
-    setNewEmployee(initialState);
 
-    // OPEN MODAL
-    ///////////////////////////
+    // open modal
+    toggle();
   };
 
   return (
@@ -161,6 +159,7 @@ export default function Form() {
         btn1="Add an employee"
         btn2="Employees list"
         redirect={goTo}
+        autpfocus
       />
     </form>
   );
