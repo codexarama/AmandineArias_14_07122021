@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <>
       <nav aria-labelledby='nav-title'>
-        <div aria-label="Wealth Health logo" className="nav-item nav-brand">
+        <div tabIndex="0" aria-label="Wealth Health logo" className="nav-item nav-brand">
           <img
             className="nav-logo--design"
             src={logoDesign}
@@ -27,8 +27,8 @@ export default function Navbar() {
             alt="Wealth Health logo brand name"
           />
         </div>
-        <div role="navigation"  className="nav-item nav-menu">
-          <h1 id='nav-title' className="nav-menu--title">HRnet Employees</h1>
+        <div className="nav-item nav-menu">
+          <h1 tabIndex="0" id='nav-title' className="nav-menu--title">HRnet Employees</h1>
           <NavLink to="/employees" className="nav-menu--choice">
             <img
               className="nav-ico"

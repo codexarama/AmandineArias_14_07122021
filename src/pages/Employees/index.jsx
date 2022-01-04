@@ -11,8 +11,8 @@ export default function Employees() {
   });
 
   return (
-    <main className="employees-list">
-      <h2>Employees list</h2>
+    <main aria-labelledby="page-title" className="table">
+      <h2 tabIndex="0" id="page-title">Employees list</h2>
       <Table />
     </main>
   );
