@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <main aria-labelledby="page-title">
-      <h2 id="page-title">Add an employee</h2>
+      <h2 tabIndex="0" id="page-title">Add an employee</h2>
       <Form />
     </main>
   );
