@@ -67,7 +67,11 @@ export default function Table() {
     return (
       <tr {...headerGroup.getHeaderGroupProps()}>
         {headerGroup.headers.map((column) => (
-          <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+          <th
+            tabIndex="0"
+            scope="col"
+            {...column.getHeaderProps(column.getSortByToggleProps())}
+          >
             {column.render('Header')}
             <span>
               {column.isSorted ? (column.isSortedDesc ? ' ▾' : ' ▴') : ''}
@@ -84,7 +88,11 @@ export default function Table() {
     return (
       <tr {...row.getRowProps()}>
         {row.cells.map((cell) => {
-          return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+          return (
+            <td tabIndex="0" {...cell.getCellProps()}>
+              {cell.render('Cell')}
+            </td>
+          );
         })}
       </tr>
     );
@@ -112,7 +120,10 @@ export default function Table() {
           </select>
           entries
         </label>
-        <h3 tabIndex="0" className="table-header--title">{`currently ${employeesList.length} employees`}</h3>
+        <h3
+          tabIndex="0"
+          className="table-header--title"
+        >{`currently ${employeesList.length} employees`}</h3>
         <TableFilter
           className="table-header--search"
           id="search"
