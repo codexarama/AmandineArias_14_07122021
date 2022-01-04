@@ -69,7 +69,6 @@ export default function Table() {
         {headerGroup.headers.map((column) => (
           <th
             tabIndex="0"
-            scope="col"
             {...column.getHeaderProps(column.getSortByToggleProps())}
           >
             {column.render('Header')}

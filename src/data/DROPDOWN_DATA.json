@@ -1,7 +1,7 @@
 [
   {
     "className": "stateAbbrev address",
-    "id": "state-abbrev",
+    "id": "stateAbbrev",
     "label": "State",
     "type": "text",
     "select": [

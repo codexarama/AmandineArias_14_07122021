@@ -1,4 +1,9 @@
 import { useEffect } from 'react';
+
+import { getTags } from '../../utils/handlers';
+import { getNestedTags } from '../../utils/handlers';
+import { setAttributes } from '../../utils/handlers';
+
 import Table from '../../components/Table';
 
 /**
@@ -8,11 +13,32 @@ import Table from '../../components/Table';
 export default function Employees() {
   useEffect(() => {
     document.title = 'HRnet | Employees';
+
+    // ACCESSIBILITY
+    // HANDLING ROWS GROUP BY SETTING ATTRIBUTE
+    getTags('tr').map((item) => setAttributes(item, { role: 'rowgroup' }));
+    getTags('tbody').map((item) => item.removeAttribute('role'));
+    
+    // HANDLING HEADERS SCOPE BY SETTING ATTRIBUTE
+    // headers level 1
+    getNestedTags('tr', 0, 'th').map((item) =>
+      setAttributes(item, {
+        scope: 'colgroup',
+      })
+    );
+    // headers level 2
+    getNestedTags('tr', 1, 'th').map((item) =>
+      setAttributes(item, {
+        scope: 'col',
+      })
+    );
   });
 
   return (
     <main aria-labelledby="page-title" className="table">
-      <h2 tabIndex="0" id="page-title">Employees list</h2>
+      <h2 tabIndex="0" id="page-title">
+        Employees list
+      </h2>
       <Table />
     </main>
   );
