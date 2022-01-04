@@ -31,7 +31,7 @@ export default function Home() {
     maxAge = maxAge.toISOString().split('T')[0];
 
     // SETTING DATE OF BIRTH MIN / MAX ATTRIBUTES
-    setAttributes(getElement('date-of-birth'), {
+    setAttributes(getElement('dateOfBirth'), {
       min: minAge,
       max: maxAge,
     });
@@ -48,7 +48,7 @@ export default function Home() {
     maxStartDate = maxStartDate.toISOString().split('T')[0];
 
     // SETTING START DATE MIN / MAX ATTRIBUTES
-    setAttributes(getElement('start-date'), {
+    setAttributes(getElement('startDate'), {
       min: minStartDate,
       max: maxStartDate,
     });

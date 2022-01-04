@@ -1,19 +1,19 @@
 [
   {
     "className": "firstName",
-    "id": "first-name",
+    "id": "firstName",
     "label": "First name",
     "type": "text"
   },
   {
     "className": "lastName",
-    "id": "last-name",
+    "id": "lastName",
     "label": "Last name",
     "type": "text"
   },
   {
     "className": "dateOfBirth",
-    "id": "date-of-birth",
+    "id": "dateOfBirth",
     "label": "Date of Birth",
     "type": "date",
     "min": "01/01/1950",
@@ -33,13 +33,13 @@
   },
   {
     "className": "zipCode address",
-    "id": "zip-code",
+    "id": "zipCode",
     "label": "Zip Code",
     "type": "text"
   },
   {
     "className": "startDate",
-    "id": "start-date",
+    "id": "startDate",
     "label": "Start Date",
     "type": "date",
     "min": null,
