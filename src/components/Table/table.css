@@ -68,7 +68,6 @@
 .table-main--list th {
   padding: 0.25rem;
   background-color: var(--primary);
-  /* background-color: var(--secondary); */
   color: var(--light);
 }
 

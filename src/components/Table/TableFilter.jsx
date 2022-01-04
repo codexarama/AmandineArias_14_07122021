@@ -29,7 +29,8 @@ export default function TableFilter({ filter, setFilter, className, id }) {
       <label htmlFor={id}>Search</label>
       <input
         id={id}
-        type="text"
+        type="search"
+        role="searchbox"
         value={value || ''}
         onChange={(e) => {
           setValue(e.target.value);
