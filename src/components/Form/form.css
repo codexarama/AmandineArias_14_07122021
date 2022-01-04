@@ -148,3 +148,7 @@ select {
   color: var(--tertiary);
   cursor: not-allowed;
 }
+
+.modal-container {
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px !important;
+}

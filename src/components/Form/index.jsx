@@ -11,6 +11,12 @@ import Dropdown from '../Dropdown';
 
 import './form.css';
 
+import { useNavigate } from 'react-router-dom';
+import { Modal, useModal } from 'codexarama-modal';
+import confirm from '../../assets/ico-user-confirm.svg';
+import close from '../../assets/ico-close.svg';
+// import 'codexarama-modal/dist/styles/modal.css';
+
 /**
  * Form
  * @returns {Reactnode}  jsx injected in DOM
@@ -69,6 +75,14 @@ export default function Form() {
   let employeesList =
     JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
 
+  // MODAL FEATURES
+  const { isOpen, toggle } = useModal();
+
+  const redirectTo = useNavigate();
+  function goTo() {
+    redirectTo('/employees');
+  }
+
   // ON SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,6 +101,9 @@ export default function Form() {
     // RESET FORM
     setNewEmployee({ ...newEmployee }, e.target.reset());
     setNewEmployee(initialState);
+
+    // OPEN MODAL
+    ///////////////////////////
   };
 
   return (
@@ -132,6 +149,19 @@ export default function Form() {
       ))}
 
       {submit}
+
+      <Modal
+        modal={isOpen}
+        close={toggle}
+        x={close}
+        icon={confirm}
+        title="Confirmation"
+        msgL1="New collaborator"
+        msgL2="successfully registred"
+        btn1="Add an employee"
+        btn2="Employees list"
+        redirect={goTo}
+      />
     </form>
   );
 }
