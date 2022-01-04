@@ -14,7 +14,7 @@ nav {
   }
 
   .nav-brand {
-    margin-left: 1rem;
+    padding: 1rem;
   }
 
   .nav-logo--design {
@@ -30,7 +30,8 @@ nav {
   }
 
   .nav-menu--title {
-    padding-right: 1rem;
+    margin: 0;
+    padding: 1.2rem;
   }
 
   .nav-menu--choice {
@@ -41,9 +42,11 @@ nav {
     color: var(--primary);
   }
 
-  .nav-menu--choice:hover {
+  .nav-menu--choice:hover,
+  .nav-menu--choice:focus {
     background: var(--primary);
     color: var(--tertiary);
+    outline: none;
   }
 
   .active {
