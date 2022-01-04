@@ -22,8 +22,13 @@ export const getElements = (className) => {
   return [...document.getElementsByClassName(className)];
 };
 
+// GETTIN HTML TAGS
+export const getTags = (tag) => {
+  return [...document.getElementsByTagName(tag)];
+};
+
 // GETTING HTML NESTED TAGS
-export const getTags = (tag1, index, tag2) => {
+export const getNestedTags = (tag1, index, tag2) => {
   return [...document.getElementsByTagName(tag1)[index].getElementsByTagName(tag2)];
 };
 
