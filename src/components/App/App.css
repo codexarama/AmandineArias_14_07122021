@@ -124,3 +124,36 @@ th:focus {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  nav {
+    width: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-logo--design {
+    width: 3rem;
+  }
+
+  .nav-logo--brand {
+    width: 16rem;
+  }
+
+  .nav-menu {
+    width: unset;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .table-header {
+    flex-direction: column;
+    height: 125px;
+  }
+
+  .table-footer {
+    flex-direction: column;
+  }}
