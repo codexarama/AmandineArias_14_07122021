@@ -56,6 +56,12 @@ h2 {
   color: var(--primary);
 }
 
+#page-title {
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
 /* LINKS */
 a {
   text-decoration: none;
@@ -74,6 +80,7 @@ input:focus,
 select:focus,
 button:focus {
   outline: none;
+  box-shadow: 0 0 0 1.5px var(--tertiary-constrast)
 }
 
 /* ERROR message */
