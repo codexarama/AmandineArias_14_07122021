@@ -15,12 +15,17 @@ document.addEventListener('keydown', () => {
 
 // GETTING HTML ELEMENT(S)
 export const getElement = (id) => {
-    return document.getElementById(id)
-  }
+  return document.getElementById(id);
+};
 
 export const getElements = (className) => {
-    return [...document.getElementsByClassName(className)]
-  }
+  return [...document.getElementsByClassName(className)];
+};
+
+// GETTING HTML NESTED TAGS
+export const getTags = (tag1, index, tag2) => {
+  return [...document.getElementsByTagName(tag1)[index].getElementsByTagName(tag2)];
+};
 
 // MANAGING SET MULTIPLE ATTRIBUTES
 export const setAttributes = (element, attributes) => {
@@ -28,4 +33,3 @@ export const setAttributes = (element, attributes) => {
     element.setAttribute(key, attributes[key]);
   }
 };
-
