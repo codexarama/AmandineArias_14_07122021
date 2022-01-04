@@ -94,12 +94,13 @@ export default function Table() {
   const { globalFilter, pageIndex, pageSize } = state;
 
   return (
-    <section className="table">
+    <>
       <header className="table-header">
-        <div className="table-header--entries">
+        <label htmlFor="show-entries" className="table-header--entries">
           Show
           <select
-            id="showEntries"
+            tabIndex="0"
+            id="show-entries"
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
@@ -110,8 +111,8 @@ export default function Table() {
             ))}
           </select>
           entries
-        </div>
-        <h3 className="table-header--title">{`currently ${employeesList.length} employees`}</h3>
+        </label>
+        <h3 tabIndex="0" className="table-header--title">{`currently ${employeesList.length} employees`}</h3>
         <TableFilter
           className="table-header--search"
           id="search"
@@ -126,7 +127,7 @@ export default function Table() {
         </table>
       </main>
       <footer className="table-footer">
-        <span className="table-footer--pageIndex">
+        <span tabIndex="0" className="table-footer--pageIndex">
           <strong>
             Page {pageIndex + 1} of {pageOptions.length}
           </strong>
@@ -162,6 +163,6 @@ export default function Table() {
           </button>
         </span>
       </footer>
-    </section>
+    </>
   );
 }
