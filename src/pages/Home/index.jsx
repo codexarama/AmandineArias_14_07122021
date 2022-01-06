@@ -16,7 +16,7 @@ export default function Home() {
 
     // FILLING THE ADDRESS BLOCK WITH THE ADDRESS ITEMS
     getElements('address').map((item) => {
-      return <h3>Address</h3> && getElement('address-container').append(item);
+      return <h3>Address</h3> && getElement('addressContainer').append(item);
     });
 
     // HANDLING MIN / MAX AGE FOR DATE OF BIRTH INPUT
