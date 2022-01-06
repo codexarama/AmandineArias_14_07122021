@@ -127,7 +127,7 @@ export default function Form() {
       ))}
 
       <fieldset
-        id="address-container"
+        id="addressContainer"
         className="form-newEmployee--addressContainer"
       >
         <legend className="form-newEmployee--addressGroup">Address</legend>
