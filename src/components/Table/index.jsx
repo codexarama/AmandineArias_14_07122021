@@ -72,9 +72,8 @@ export default function Table() {
             {...column.getHeaderProps(column.getSortByToggleProps())}
           >
             {column.render('Header')}
-            <span>
-              {column.isSorted ? (column.isSortedDesc ? ' ▾' : ' ▴') : ''}
-            </span>
+            <button tabIndex="0" className='table-main--arrowUp'>▴</button>
+            <button tabIndex="0" className='table-main--arrowDown'>▾</button>
           </th>
         ))}
       </tr>

@@ -52,9 +52,41 @@
   box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 2.5rem 0.5px !important;
 }
 
+.table-main--list thead :nth-child(1) button {
+  display: none;
+}
+
+.table-main--list thead :nth-child(2) :first-child {
+  padding-right: 0;
+}
+
 .table-main--list thead :nth-child(2) > * {
+  position: relative;
+  padding-right: 0.75rem;
   font-family: 'Open Sans Condensed';
   color: var(--tertiary);
+}
+
+.table-main--arrowUp {
+  background-color: transparent;
+  position: absolute !important;
+  bottom: 8px;
+  padding: 0 !important;
+  color: var(--tertiary);
+}
+
+.table-main--arrowDown {
+  background-color: transparent;
+  position: absolute !important;
+  top: 12px;
+  padding: 0 !important;
+  color: var(--tertiary);
+}
+
+.table-main--arrowUp:focus,
+.table-main--arrowDown:focus {
+  box-shadow: none !important;
+  color: var(--light) !important;
 }
 
 .table-main--list thead :first-child :first-child {

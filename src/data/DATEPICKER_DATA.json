@@ -1,4 +1,0 @@
-[
-  { "id": "dateOfBirth", "label": "Date of Birth", "type": "date" },
-  { "id": "startDate", "label": "Start Date", "type": "date" }
-]
