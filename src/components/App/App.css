@@ -83,6 +83,7 @@ a {
 /* ELEMENTS */
 button {
   border: none;
+  cursor: pointer;
 }
 
 select {
