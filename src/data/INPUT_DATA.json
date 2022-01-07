@@ -15,9 +15,7 @@
     "className": "dateOfBirth",
     "id": "dateOfBirth",
     "label": "Date of Birth",
-    "type": "date",
-    "min": "01/01/1950",
-    "max": null
+    "type": "date"
   },
   {
     "className": "street address",
@@ -41,8 +39,6 @@
     "className": "startDate",
     "id": "startDate",
     "label": "Start Date",
-    "type": "date",
-    "min": null,
-    "max": null
+    "type": "date"
   }
 ]
