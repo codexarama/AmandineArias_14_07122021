@@ -85,7 +85,9 @@
 }
 
 .table-main--arrowUp:focus,
-.table-main--arrowDown:focus {
+.table-main--arrowDown:active,
+.table-main--arrowUp:focus,
+.table-main--arrowDown:active {
   box-shadow: none !important;
   color: var(--light) !important;
 }

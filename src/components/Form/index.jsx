@@ -65,10 +65,6 @@ export default function Form() {
       </button>
     );
 
-  // GET DATA
-  let employeesList =
-    JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
-
   // MODAL MODULE SETTINGS
   const { isOpen, toggle } = useModal();
 
@@ -81,6 +77,10 @@ export default function Form() {
   const handleChange = (e) => {
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() });
   };
+
+  // GET DATA
+  let employeesList =
+    JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
 
   // ON SUBMIT
   const handleSubmit = (e) => {
