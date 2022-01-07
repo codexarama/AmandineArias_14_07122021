@@ -4,16 +4,15 @@
 
 /* COLORS */
 :root {
-  --bg: #fafbf9;
   --dark: #483e37;
   --primary: #6c6753;
   --secondary: #8d9379;
   --tertiary-constrast: #bec7a3;
   --tertiary: #cad3ae;
-  --light: #fff;
-  --error: #f95;
   --disabled: #eef1e3;
-  --table-row: #eef1e3;
+  --light: #fff;
+  --bg: #fafbf9;
+  --error: #ff6060;
 }
 
 /* BODY */

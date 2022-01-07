@@ -149,6 +149,9 @@ select {
   cursor: not-allowed;
 }
 
-.modal-container {
-  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px !important;
+/* MODAL */
+.modal-container--close:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--light), 0 0 0 4px var(--close) !important;
+  border-radius: 100px;
 }

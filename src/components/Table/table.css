@@ -99,7 +99,7 @@
 }
 
 .table-main--list tr:nth-child(even) {
-  background-color: var(--table-row);
+  background-color: var(--disabled);
 }
 
 .table-main--list tr:hover,
