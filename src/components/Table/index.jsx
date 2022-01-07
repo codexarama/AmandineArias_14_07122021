@@ -72,8 +72,8 @@ export default function Table() {
             {...column.getHeaderProps(column.getSortByToggleProps())}
           >
             {column.render('Header')}
-            <button tabIndex="0" className='table-main--arrowUp'>▴</button>
-            <button tabIndex="0" className='table-main--arrowDown'>▾</button>
+            <button tabIndex="0" aria-label='sort by ascent order' className='table-main--arrowUp'>▴</button>
+            <button tabIndex="0" aria-label='sort by descent order' className='table-main--arrowDown'>▾</button>
           </th>
         ))}
       </tr>
