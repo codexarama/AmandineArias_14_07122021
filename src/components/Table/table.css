@@ -30,7 +30,8 @@
 }
 
 .table-header--search img {
-  width: 1rem;
+  width: 16px;
+  height: 16px;
   margin-right: 0.25rem;
 }
 
@@ -99,6 +100,7 @@
 
 .table-main--list th {
   padding: 0.25rem;
+  /* background-color: var(--dark); */
   background-color: var(--primary);
   color: var(--light);
 }
@@ -161,7 +163,7 @@
   background-color: var(--tertiary);
   border-radius: 0.25rem;
   border: 1px solid var(--primary);
-  color: var(--primary);
+  color: var(--dark);
   line-height: 1.25rem;
 }
 

@@ -18,11 +18,13 @@ nav {
   }
 
   .nav-logo--design {
-    width: 2.5rem;
+    width: 40px;
+    height: 40px;
   }
 
   .nav-logo--brand {
-    width: 15rem;
+    width: 240px;
+    height: 40px;
   }
 
   .nav-menu {

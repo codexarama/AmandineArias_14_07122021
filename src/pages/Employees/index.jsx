@@ -7,7 +7,7 @@ import { setAttributes } from '../../utils/handlers';
 import Table from '../../components/Table';
 
 /**
- * Employees
+ * Employees List with many sorting options
  * @returns {Reactnode}  jsx injected in DOM
  */
 export default function Employees() {
@@ -16,9 +16,9 @@ export default function Employees() {
 
     // ACCESSIBILITY
     // HANDLING ROWS GROUP BY SETTING ATTRIBUTE
-    getTags('tr').map((item) => setAttributes(item, { role: 'rowgroup' }));
+    console.log(getTags('tr'));
     getTags('tbody').map((item) => item.removeAttribute('role'));
-    
+
     // HANDLING HEADERS SCOPE BY SETTING ATTRIBUTE
     // headers level 1
     getNestedTags('tr', 0, 'th').map((item) =>

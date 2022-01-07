@@ -12,7 +12,8 @@
 }
 
 .form-newEmployee--ico {
-  width: 2.5rem;
+  width: 40px;
+  height: 40px;
   display: block;
   margin: 0 auto 2.5rem;
 }
