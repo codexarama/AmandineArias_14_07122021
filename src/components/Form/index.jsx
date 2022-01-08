@@ -31,7 +31,7 @@ export default function Form() {
     zipCode: '',
     stateAbbrev: '',
     startDate: '',
-    department: '',
+    departmentAbbrev: '',
   };
 
   const [newEmployee, setNewEmployee] = useState(initialState);
@@ -46,7 +46,7 @@ export default function Form() {
     !newEmployee.zipCode ||
     !newEmployee.startDate ||
     !newEmployee.stateAbbrev ||
-    !newEmployee.department ? (
+    !newEmployee.departmentAbbrev ? (
       <button
         type="submit"
         className="submit form-newEmployee--submit"

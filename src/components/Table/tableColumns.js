@@ -50,8 +50,8 @@ export const TABLE_COLUMNS = [
         accessor: 'startDate',
       },
       {
-        Header: 'Department',
-        accessor: 'department',
+        Header: 'Dpt',
+        accessor: 'departmentAbbrev',
       },
     ],
   },
