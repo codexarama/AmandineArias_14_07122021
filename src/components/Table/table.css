@@ -53,7 +53,7 @@
   box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 2.5rem 0.5px !important;
 }
 
-.table-main--list thead :nth-child(1) button {
+.table-main--list thead :nth-child(1) span {
   display: none;
 }
 
@@ -62,30 +62,37 @@
 }
 
 .table-main--list thead :nth-child(2) > * {
-  position: relative;
   padding-right: 0.75rem;
   font-family: 'Open Sans Condensed';
   color: var(--tertiary);
 }
 
+.table-main--sort {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+
 .table-main--arrowUp {
+  position: absolute;
+  bottom: -1px;
   background-color: transparent;
-  position: absolute !important;
-  bottom: 8px;
   padding: 0 !important;
   color: var(--tertiary);
 }
 
 .table-main--arrowDown {
+  position: absolute;
+  top: -8px;
   background-color: transparent;
-  position: absolute !important;
-  top: 12px;
   padding: 0 !important;
   color: var(--tertiary);
 }
 
+.table-main--arrowUp:hover,
 .table-main--arrowUp:focus,
 .table-main--arrowDown:active,
+.table-main--arrowUp:hover,
 .table-main--arrowUp:focus,
 .table-main--arrowDown:active {
   box-shadow: none !important;
@@ -123,15 +130,52 @@
   padding: 0.25rem 0.5rem;
 }
 
-.table-main--list tbody tr :first-child {
+/* Id input */
+.table-main--list tbody tr :nth-child(1) {
+  width: 3%;
   text-align: right;
 }
 
+/* First Name input */
+.table-main--list tbody tr :nth-child(2),
+/* Last Name input */
+.table-main--list tbody tr :nth-child(3) {
+  width: 10%;
+}
+
+/* Birth Date input */
 .table-main--list tbody tr :nth-child(4),
-.table-main--list tbody tr :nth-child(7),
-.table-main--list tbody tr :nth-child(8),
+/* Start Date input */
 .table-main--list tbody tr :nth-child(9) {
+  width: 10%;
   text-align: center;
+}
+
+/* Street input */
+.table-main--list tbody tr :nth-child(5) {
+  width: 18%;
+}
+
+/* City input */
+.table-main--list tbody tr :nth-child(6) {
+  width: 13%;
+}
+
+/* State input */
+.table-main--list tbody tr :nth-child(7) {
+  width: 5%;
+  text-align: center;
+}
+
+/* Zip Code */
+.table-main--list tbody tr :nth-child(8) {
+  width: 7%;
+  text-align: center;
+}
+
+/* Department */
+.table-main--list tbody thr:nth-child(10) {
+  width: auto;
 }
 
 .table-main--list tr:nth-child(even) {
