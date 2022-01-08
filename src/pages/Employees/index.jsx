@@ -16,7 +16,6 @@ export default function Employees() {
 
     // ACCESSIBILITY
     // HANDLING ROWS GROUP BY SETTING ATTRIBUTE
-    console.log(getTags('tr'));
     getTags('tbody').map((item) => item.removeAttribute('role'));
 
     // HANDLING HEADERS SCOPE BY SETTING ATTRIBUTE
