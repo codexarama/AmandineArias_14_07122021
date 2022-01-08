@@ -45,7 +45,9 @@
 /* MAIN  */
 /* EMPLOYEES LIST TABLE */
 .table-main--list {
-  width: 100%;
+  /* width: 100%; */
+  max-width: 700px;
+    overflow-x: auto;
   margin: 2rem auto;
   border-collapse: separate;
   border-radius: 0.5rem;
@@ -107,10 +109,6 @@
   color: var(--light);
 }
 
-.table-main--list tbody {
-  font-weight: 100;
-}
-
 .table-main--list tbody :last-child :first-child {
   border-bottom-left-radius: 0.5rem;
 }
@@ -119,19 +117,73 @@
   border-bottom-right-radius: 0.5rem;
 }
 
-.table-main--list td {
+.table-main--list input {
+  /* .table-main--edit { */
+  width: fit-content;
+  border: none;
+  background: transparent;
   padding: 0.25rem 0.5rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100;
+  color: var(--primary);
 }
 
-.table-main--list tbody tr :first-child {
+/* Id input */
+.table-main--list tbody tr :nth-child(1) input {
+  width: 1.5rem;
+  display: flex;
+  margin-right: -0.5em;
   text-align: right;
 }
 
-.table-main--list tbody tr :nth-child(4),
-.table-main--list tbody tr :nth-child(7),
-.table-main--list tbody tr :nth-child(8),
-.table-main--list tbody tr :nth-child(9) {
+/* Birth Date input */
+.table-main--list tbody tr :nth-child(4) input,
+/* State input */
+.table-main--list tbody tr :nth-child(7) input,
+/* Zip Code */
+.table-main--list tbody tr :nth-child(8) input,
+/* Start Date input */
+.table-main--list tbody tr :nth-child(9) input,
+.table-main--list tbody tr :nth-child(10) input {
   text-align: center;
+  display: flex;
+  margin: auto;
+}
+
+/* First Name input */
+.table-main--list tbody tr :nth-child(2) input,
+/* Last Name input */
+.table-main--list tbody tr :nth-child(3) input,
+/* Birth Date input */
+.table-main--list tbody tr :nth-child(4) input,
+/* Start Date input */
+.table-main--list tbody tr :nth-child(9) input {
+  width: 5rem;
+}
+
+/* Street input */
+.table-main--list tbody tr :nth-child(5) input {
+  width: 11rem;
+}
+
+/* City input */
+.table-main--list tbody tr :nth-child(6) input {
+  width: 6.4rem;
+}
+
+/* State input */
+.table-main--list tbody tr :nth-child(7) input {
+  width: 3.3rem;
+}
+
+/* Zip Code */
+.table-main--list tbody tr :nth-child(8) input {
+  width: 4rem;
+}
+
+/* Department */
+.table-main--list tbody tr :nth-child(10) input {
+  width: 2.5rem;
 }
 
 .table-main--list tr:nth-child(even) {
