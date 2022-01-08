@@ -4,7 +4,7 @@ import { getTags } from '../../utils/handlers';
 import { getNestedTags } from '../../utils/handlers';
 import { setAttributes } from '../../utils/handlers';
 
-import Table from '../../components/Table';
+import EditTable from '../../components/Table';
 
 /**
  * Employees List with many sorting options
@@ -39,7 +39,7 @@ export default function Employees() {
       <h2 tabIndex="0" id="page-title">
         Employees list
       </h2>
-      <Table />
+      <EditTable />
     </main>
   );
 }

@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 import {
   useTable,
+  useAbsoluteLayout,
   useSortBy,
   useGlobalFilter,
   usePagination,
@@ -14,30 +15,78 @@ import TableFilter from './TableFilter';
 
 import './table.css';
 
-/**
- * Table
- * @returns {Reactnode}  jsx injected in DOM
- */
-export default function Table() {
   // GET DATA
   let employeesList =
     JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
   // console.log(employeesList);
 
-  // useMEMO HOOK to avoid re-rendering until the data changes
-  const columns = useMemo(() => TABLE_COLUMNS, []);
-  const data = useMemo(
-    () => employeesList,
-    // eslint-disable-next-line
-    []
+
+// Create an editable cell renderer
+const EditableCell = ({
+  value: initialValue,
+  row: { index },
+  column: { id },
+  updateData,
+}) => {
+  const [value, setValue] = useState(initialValue);
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  // Update the external data when the input is blurred
+  const onBlur = () => {
+    updateData(index, id, value);
+  };
+
+  // If the initialValue is changed external, sync it up with our state
+  useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
+  return (
+    <input
+      className="table-main--edit"
+      value={value}
+      onChange={onChange}
+      onBlur={onBlur}
+    />
   );
+};
+
+// Set editable cell renderer as the default Cell renderer
+const defaultColumn = {
+  Cell: EditableCell,
+};
+
+/**
+ * Table
+ * @returns {Reactnode}  jsx injected in DOM
+ */
+function Table({ columns, data, updateData, skipPageReset }) {
+  // const defaultColumn = React.useMemo(
+  //   () => ({
+  //     width: 100,
+  //     Cell: EditableCell,
+  //   }),
+  //   []
+  // )
 
   // TABLE INSTANCE
   const tableInstance = useTable(
     {
-      columns: columns,
-      data: data,
+      columns,
+      data,
+      defaultColumn,
+      // use the skipPageReset option to disable page resetting temporarily
+      autoResetPage: !skipPageReset,
+      // updateData isn't part of the API, but
+      // anything we put into these options will
+      // automatically be available on the instance.
+      // That way we can call this function from
+      // cell renderer
+      updateData,
     },
+    // useAbsoluteLayout,
     useGlobalFilter,
     useSortBy,
     usePagination
@@ -72,8 +121,20 @@ export default function Table() {
             {...column.getHeaderProps(column.getSortByToggleProps())}
           >
             {column.render('Header')}
-            <button tabIndex="0" aria-label='sort by ascent order' className='table-main--arrowUp'>▴</button>
-            <button tabIndex="0" aria-label='sort by descent order' className='table-main--arrowDown'>▾</button>
+            <button
+              tabIndex="0"
+              aria-label="sort by ascent order"
+              className="table-main--arrowUp"
+            >
+              ▴
+            </button>
+            <button
+              tabIndex="0"
+              aria-label="sort by descent order"
+              className="table-main--arrowDown"
+            >
+              ▾
+            </button>
           </th>
         ))}
       </tr>
@@ -121,7 +182,7 @@ export default function Table() {
         <h3
           tabIndex="0"
           className="table-header--title"
-        >{`currently ${employeesList.length} employees`}</h3>
+        >{`currently ${data.length} employees`}</h3>
         <TableFilter
           className="table-header--search"
           id="search"
@@ -172,6 +233,64 @@ export default function Table() {
           </button>
         </span>
       </footer>
+    </>
+  );
+}
+
+export default function EditTable() {
+  // // GET DATA
+  // let employeesList =
+  //   JSON.parse(window.localStorage.getItem('employeesList')) || EMPLOYEES_LIST;
+  // // console.log(employeesList);
+
+  // useMEMO HOOK to avoid re-rendering until the data changes
+  const columns = useMemo(() => TABLE_COLUMNS, []);
+
+  const [data, setData] = useState(employeesList);
+  const [skipPageReset, setSkipPageReset] = useState(false);
+  // const [originalData] = useState(data)
+
+  // Keep the table from resetting the pageIndex when update data.
+  // So can keep track of that flag with a ref.
+
+  // When cell renderer calls updateData,
+  // the rowIndex, columnId and new value are used
+  // to update the original data
+  const updateData = (rowIndex, columnId, value) => {
+    // Also turn on the flag to not reset the page
+    setSkipPageReset(true);
+    setData((old) =>
+      old.map((row, index) => {
+        if (index === rowIndex) {
+          return {
+            ...old[rowIndex],
+            [columnId]: value,
+          };
+        }
+        return row;
+      })
+    );
+  };
+
+  // After data changes, turn the flag back off
+  // so that if data actually changes when we're not editing it,
+  // the page is reset
+  useEffect(() => {
+    setSkipPageReset(false);
+  }, [data]);
+
+  // // Data resetter/randomizer to help illustrate that flow...
+  // const resetData = () => setData(originalData)
+
+  return (
+    <>
+      <Table
+        columns={columns}
+        data={data}
+        updateData={updateData}
+        skipPageReset={skipPageReset}
+      />
+      {/* <button onClick={resetData}>Reset Data</button> */}
     </>
   );
 }
