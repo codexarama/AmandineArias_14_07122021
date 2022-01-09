@@ -2,6 +2,10 @@
 
     Projet fictif de formation n°11/11 | OpenClassrooms
     
+
+![Add an employee](./WealthHealth_1.png)
+![Employees list](./WealthHealth_2.png)
+
 > PROBLEMATIQUE
 
 Utilisation en interne d'une application de gestion RH représentant 90% de la dette technologique de l'entreprise
