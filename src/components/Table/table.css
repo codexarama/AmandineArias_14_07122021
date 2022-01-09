@@ -1,6 +1,6 @@
 /* PAGE */
 .table {
-  max-width: 90%;
+  width: 90%;
   margin: auto;
 }
 
@@ -47,17 +47,8 @@
 /* MAIN  */
 /* EMPLOYEES LIST TABLE */
 .table-main {
-  max-width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
-.table-main--list {
-  width: 100%;
   margin: 2rem auto;
-  border-collapse: separate;
   border-radius: 0.5rem;
-  background-color: transparent;
   box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 2.5rem 0.5px !important;
 }
 
@@ -67,6 +58,14 @@
 
 .table-main--list thead :first-child :last-child {
   border-top-right-radius: 0.5rem;
+}
+
+.table-main--list tbody :last-child :first-child {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.table-main--list tbody :last-child :last-child {
+  border-bottom-right-radius: 0.5rem;
 }
 
 .table-main--list th {
@@ -126,14 +125,6 @@
   font-weight: 100;
 }
 
-.table-main--list tbody :last-child :first-child {
-  border-bottom-left-radius: 0.5rem;
-}
-
-.table-main--list tbody :last-child :last-child {
-  border-bottom-right-radius: 0.5rem;
-}
-
 /* even = 1/2 row */
 .table-main--list tr:nth-child(even) {
   background-color: var(--disabled);
@@ -174,12 +165,10 @@ FROM OVERFLOWING THE PAGE WIDTH */
 /* FOOTER */
 /* TABLE NAVIGATION */
 .table-footer {
-  width: 90%;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .table-footer--pageIndex {
