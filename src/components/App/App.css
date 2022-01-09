@@ -35,8 +35,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--primary) !important;
-  /* background-color: var(--tertiary-constrast) !important; */
-  /* border: 2px solid var(--tertiary); */
 }
 
 /* TITLES */
@@ -125,19 +123,69 @@ th:focus {
 }
 
 /* ADAPTATIVE */
+@media screen and (max-width: 968px) {
+
+  /* TABLE PAGE */
+  .table {
+    max-width: 100%;
+  }
+
+  /* TABLE HEADER */
+  .table-header {
+    width: 90%;
+    margin: auto;
+  }
+
+  /* TABLE MAIN */
+  .table-main {
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .table-main--list tbody :last-child :first-child {
+    border-bottom-left-radius: 0;
+  }
+
+  .table-main--list tbody :last-child :last-child {
+    border-bottom-right-radius: 0;
+  }
+
+  /* horizontal table scrollbar */
+  .table-main::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .table-main::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .table-main::-webkit-scrollbar-thumb {
+    background-color: var(--tertiary) !important;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .table-main--list {
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 0.5rem;
+    background-color: transparent;
+  }
+
+  /* TABLE FOOTER */
+  .table-footer {
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  /* NAVBAR */
   nav {
     width: unset;
     display: flex;
     flex-direction: column;
-  }
-
-  .nav-logo--design {
-    width: 3rem;
-  }
-
-  .nav-logo--brand {
-    width: 16rem;
   }
 
   .nav-menu {
@@ -148,6 +196,7 @@ th:focus {
     justify-content: center;
   }
 
+  /* TABLE */
   .table-header {
     flex-direction: column;
     height: 125px;
@@ -155,4 +204,5 @@ th:focus {
 
   .table-footer {
     flex-direction: column;
-  }}
+  }
+}
