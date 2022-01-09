@@ -127,6 +127,16 @@ th:focus {
   .table {
     max-width: 100%;
   }
+
+  .table-header {
+    width: 90%;
+    margin: auto;
+  }
+
+  .table-footer {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -151,4 +161,5 @@ th:focus {
 
   .table-footer {
     flex-direction: column;
-  }}
+  }
+}
