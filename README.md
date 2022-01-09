@@ -4,7 +4,6 @@
     
 
 ![Add an employee](./WealthHealth_1.png)
-![Employees list](./WealthHealth_2.png)
 
 > PROBLEMATIQUE
 
