@@ -35,8 +35,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--primary) !important;
-  /* background-color: var(--tertiary-constrast) !important; */
-  /* border: 2px solid var(--tertiary); */
 }
 
 /* TITLES */
@@ -125,19 +123,17 @@ th:focus {
 }
 
 /* ADAPTATIVE */
+@media screen and (max-width: 968px) {
+  .table {
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   nav {
     width: unset;
     display: flex;
     flex-direction: column;
-  }
-
-  .nav-logo--design {
-    width: 3rem;
-  }
-
-  .nav-logo--brand {
-    width: 16rem;
   }
 
   .nav-menu {
