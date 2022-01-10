@@ -1,5 +1,24 @@
 {
   "name": "hrnet",
+  "description": "",
+  "author": "Amandine Arias-Breton alias Codexarama",
+  "keywords": [
+    "HRnet",
+    "wealth",
+    "health",
+    "react",
+    "Accessibility",
+    "ARIA",
+    "App",
+    "form",
+    "modal",
+    "table",
+    "Jsx",
+    "JavaScript",
+    "Frontend",
+    "Web",
+    "Development"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
