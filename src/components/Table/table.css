@@ -108,10 +108,8 @@
 .table-main--arrowDown:hover,
 .table-main--arrowDown:focus,
 .table-main--arrowDown:active {
-  /* box-shadow: none !important; */
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  /* background-color: var(--tertiary); */
   color: var(--light) !important;
 }
 
