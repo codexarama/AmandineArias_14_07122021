@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import icoAdd from '../../assets/ico-user-add.svg';
 
@@ -66,7 +66,14 @@ export default function Form() {
     );
 
   // MODAL MODULE SETTINGS
-  const { isOpen, toggle } = useModal();
+  const { isOpen, toggle, escToClose } = useModal();
+
+  // detects when escape key pressed to close the modal
+  // and stops event propagation when occured
+  useEffect(() => {
+    window.addEventListener('keydown', escToClose);
+    return () => window.removeEventListener('keydown', escToClose);
+  });
 
   const redirectTo = useNavigate();
   function goTo() {
