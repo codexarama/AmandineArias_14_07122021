@@ -36,34 +36,34 @@ export default function Form() {
 
   const [newEmployee, setNewEmployee] = useState(initialState);
 
-  // DISABLE || ENABLE SUBMIT BUTTON
-  const submit =
-    !newEmployee.firstName ||
-    !newEmployee.lastName ||
-    !newEmployee.dateOfBirth ||
-    !newEmployee.street ||
-    !newEmployee.city ||
-    !newEmployee.zipCode ||
-    !newEmployee.startDate ||
-    !newEmployee.stateAbbrev ||
-    !newEmployee.department ? (
-      <button
-        type="submit"
-        className="submit form-newEmployee--submit"
-        aria-disabled="true"
-        disabled
-      >
-        Save
-      </button>
-    ) : (
-      <button
-        type="submit"
-        className="submit form-newEmployee--submit"
-        aria-disabled="false"
-      >
-        Save
-      </button>
-    );
+  // // DISABLE || ENABLE SUBMIT BUTTON
+  // const submit =
+  //   !newEmployee.firstName ||
+  //   !newEmployee.lastName ||
+  //   !newEmployee.dateOfBirth ||
+  //   !newEmployee.street ||
+  //   !newEmployee.city ||
+  //   !newEmployee.zipCode ||
+  //   !newEmployee.startDate ||
+  //   !newEmployee.stateAbbrev ||
+  //   !newEmployee.department ? (
+  //     <button
+  //       type="submit"
+  //       className="submit form-newEmployee--submit"
+  //       aria-disabled="true"
+  //       disabled
+  //     >
+  //       Save
+  //     </button>
+  //   ) : (
+  //     <button
+  //       type="submit"
+  //       className="submit form-newEmployee--submit"
+  //       aria-disabled="false"
+  //     >
+  //       Save
+  //     </button>
+  //   );
 
   // MODAL MODULE SETTINGS
   const { isOpen, toggle, escToClose } = useModal();
@@ -153,7 +153,14 @@ export default function Form() {
         />
       ))}
 
-      {submit}
+      <button
+        type="submit"
+        className="submit form-newEmployee--submit"
+      >
+        Save
+      </button>
+
+      {/* {submit} */}
 
       <Modal
         modal={isOpen}
