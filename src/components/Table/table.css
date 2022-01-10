@@ -96,6 +96,7 @@
   padding-right: 0;
   background-color: transparent;
   color: var(--tertiary);
+  width: 1rem;
 }
 
 .table-main--bullet:hover,
