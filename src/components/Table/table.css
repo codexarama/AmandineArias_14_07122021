@@ -137,29 +137,54 @@
 
 /* Id input */
 .table-main--list tbody tr :nth-child(1) {
+  width: 3%;
   text-align: right;
+}
+
+/* First Name input */
+.table-main--list tbody tr :nth-child(2),
+  /* Last Name input */
+  .table-main--list tbody tr :nth-child(3) {
+  width: 7%;
 }
 
 /* Birth Date input */
 .table-main--list tbody tr :nth-child(4),
-/* State input */
-.table-main--list tbody tr :nth-child(7),
-/* Zip Code */
-.table-main--list tbody tr :nth-child(8),
-/* Start Date input */
-.table-main--list tbody tr :nth-child(9) {
+  /* Start Date input */
+  .table-main--list tbody tr :nth-child(9) {
+  width: 6%;
   text-align: center;
 }
 
-/* THE SECRET SAUCE TO PREVENT DATA TABLE
-FROM OVERFLOWING THE PAGE WIDTH */
-.table-main--list td {
-  padding: 0.25rem 0.5rem;
-  width: 1%;
+/* Street input */
+.table-main--list tbody tr :nth-child(5) {
+  width: 13%;
 }
 
-.table-main--list td.collapse {
-  width: 0.0000000001%;
+/* City input */
+.table-main--list tbody tr :nth-child(6) {
+  width: 9%;
+}
+
+/* State input */
+.table-main--list tbody tr :nth-child(7) {
+  width: 4%;
+  text-align: center;
+}
+
+/* Zip Code */
+.table-main--list tbody tr :nth-child(8) {
+  width: 5%;
+  text-align: center;
+}
+
+/* Department */
+.table-main--list tbody tr :nth-child(10) {
+  width: 13%;
+}
+
+.table-main--list td {
+  padding: 0.25rem 0.5rem;
 }
 
 /* FOOTER */
