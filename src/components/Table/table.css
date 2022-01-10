@@ -76,17 +76,12 @@
 }
 
 .table-main--list thead :nth-child(2) > * {
-  padding-right: 0.75rem;
   font-family: 'Open Sans Condensed';
   color: var(--tertiary);
 }
 
-.table-main--list thead :nth-child(1) span {
+.table-main--list thead :nth-child(1) .table-main--sorter {
   display: none;
-}
-
-.table-main--list thead :nth-child(2) :first-child {
-  padding-right: 0;
 }
 
 .table-main--sort {
@@ -95,27 +90,22 @@
   flex-direction: column;
 }
 
+.table-main--bullet,
 .table-main--arrowUp,
 .table-main--arrowDown {
-  position: absolute;
+  padding-right: 0;
   background-color: transparent;
-  padding: 0 !important;
   color: var(--tertiary);
 }
 
-.table-main--arrowUp {
-  bottom: -1px;
-}
-
-.table-main--arrowDown {
-  top: -8px;
-}
-
+.table-main--bullet:hover,
+.table-main--bullet:focus,
+.table-main--bullet:active,
 .table-main--arrowUp:hover,
 .table-main--arrowUp:focus,
-.table-main--arrowDown:active,
-.table-main--arrowUp:hover,
-.table-main--arrowUp:focus,
+.table-main--arrowUp:active,
+.table-main--arrowDown:hover,
+.table-main--arrowDown:focus,
 .table-main--arrowDown:active {
   box-shadow: none !important;
   color: var(--light) !important;
@@ -137,29 +127,54 @@
 
 /* Id input */
 .table-main--list tbody tr :nth-child(1) {
+  width: 3%;
   text-align: right;
+}
+
+/* First Name input */
+.table-main--list tbody tr :nth-child(2),
+  /* Last Name input */
+  .table-main--list tbody tr :nth-child(3) {
+  width: 7%;
 }
 
 /* Birth Date input */
 .table-main--list tbody tr :nth-child(4),
-/* State input */
-.table-main--list tbody tr :nth-child(7),
-/* Zip Code */
-.table-main--list tbody tr :nth-child(8),
-/* Start Date input */
-.table-main--list tbody tr :nth-child(9) {
+  /* Start Date input */
+  .table-main--list tbody tr :nth-child(9) {
+  width: 6%;
   text-align: center;
 }
 
-/* THE SECRET SAUCE TO PREVENT DATA TABLE
-FROM OVERFLOWING THE PAGE WIDTH */
-.table-main--list td {
-  padding: 0.25rem 0.5rem;
-  width: 1%;
+/* Street input */
+.table-main--list tbody tr :nth-child(5) {
+  width: 13%;
 }
 
-.table-main--list td.collapse {
-  width: 0.0000000001%;
+/* City input */
+.table-main--list tbody tr :nth-child(6) {
+  width: 9%;
+}
+
+/* State input */
+.table-main--list tbody tr :nth-child(7) {
+  width: 4%;
+  text-align: center;
+}
+
+/* Zip Code */
+.table-main--list tbody tr :nth-child(8) {
+  width: 5%;
+  text-align: center;
+}
+
+/* Department */
+.table-main--list tbody tr :nth-child(10) {
+  width: 13%;
+}
+
+.table-main--list td {
+  padding: 0.25rem 0.5rem;
 }
 
 /* FOOTER */
