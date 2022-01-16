@@ -61,8 +61,8 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 
 ### Lancement du front-end
 
-- [ ] Cloner le repo : `git clone https://github.com/codexarama/AmandineArias_14_07122021.git`
-- [ ] Aller dans ce dossier : `cd AmandineArias_14_07122021`
+- [ ] Cloner le repo : `git clone https://github.com/codexarama/WealthHealth.git`
+- [ ] Aller dans ce dossier : `cd WealthHealth`
 - [ ] Installer ses dépendances : `npm install`
 - [ ] Lancer l'application : `npm start`
 
@@ -95,8 +95,8 @@ ___
 
 ### Installing and launching front-end
 
-- [ ] Clone the repository: `git clone https://github.com/codexarama/ArgentBank.git`
-- [ ] Move to this folder: `cd ArgentBank`
+- [ ] Clone the repository: `git clone https://github.com/codexarama/WealthHealth.git`
+- [ ] Move to this folder: `cd WealthHealth`
 - [ ] Install dependencies: `npm install`
 - [ ] Launch application: `npm start`
 
