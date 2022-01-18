@@ -124,7 +124,6 @@ th:focus {
 
 /* ADAPTATIVE */
 @media screen and (max-width: 968px) {
-
   /* TABLE PAGE */
   .table {
     max-width: 100%;
@@ -204,5 +203,26 @@ th:focus {
 
   .table-footer {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  /* FORM */
+  .form-newEmployee--addressContainer {
+    width: fit-content;
+  }
+
+  .form-newEmployee--addressContainer select {
+    font-size: small;
+  }
+
+  .form-newEmployee--inputWrapper select option,
+  .form-newEmployee--addressContainer option {
+    font-size: x-small;
+  }
+
+  /* TABLE */
+  .table-footer--nav {
+    display: flex;
   }
 }
