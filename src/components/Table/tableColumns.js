@@ -43,7 +43,7 @@ export const TABLE_COLUMNS = [
   },
 
   {
-    Header: 'Infos',
+    Header: 'Informations',
     columns: [
       {
         Header: 'Start Date',
