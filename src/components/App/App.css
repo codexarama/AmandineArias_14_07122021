@@ -123,23 +123,33 @@ th:focus {
 }
 
 /* ADAPTATIVE */
+@media screen and (max-width: 1260px) {
+  .table-main--sorter {
+    padding-left: 0;
+    display: block;
+  }
+}
+
 @media screen and (max-width: 968px) {
   /* TABLE PAGE */
   .table {
-    max-width: 100%;
-  }
-
-  /* TABLE HEADER */
-  .table-header {
-    width: 90%;
-    margin: auto;
+    width: 100%;
   }
 
   /* TABLE MAIN */
   .table-main {
-    max-width: 100%;
+    border-radius: 0;
     overflow-x: scroll;
     overflow-y: hidden;
+  }
+
+  /* corners */
+  .table-main--list thead :first-child :first-child {
+    border-top-left-radius: 0;
+  }
+
+  .table-main--list thead :first-child :last-child {
+    border-top-right-radius: 0;
   }
 
   .table-main--list tbody :last-child :first-child {
@@ -150,8 +160,18 @@ th:focus {
     border-bottom-right-radius: 0;
   }
 
-  /* horizontal table scrollbar */
+  /* table */
+  .table-main--list {
+    width: 100%;
+    border-radius: 0;
+    border-collapse: separate;
+    background-color: transparent;
+    font-size: small;
+  }
+
+  /* horizontal scrollbar */
   .table-main::-webkit-scrollbar {
+    width: 5px;
     height: 5px;
   }
 
@@ -161,15 +181,6 @@ th:focus {
 
   .table-main::-webkit-scrollbar-thumb {
     background-color: var(--tertiary) !important;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-  }
-
-  .table-main--list {
-    width: 100%;
-    border-collapse: separate;
-    border-radius: 0.5rem;
-    background-color: transparent;
   }
 
   /* TABLE FOOTER */
@@ -208,10 +219,6 @@ th:focus {
 
 @media screen and (max-width: 375px) {
   /* FORM */
-  .form-newEmployee--addressContainer {
-    width: fit-content;
-  }
-
   .form-newEmployee--addressContainer select {
     font-size: small;
   }

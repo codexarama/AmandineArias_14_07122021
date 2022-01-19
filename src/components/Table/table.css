@@ -52,6 +52,11 @@
   box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 2.5rem 0.5px !important;
 }
 
+.table-main--list {
+  table-layout: auto;
+  width: 100%;
+}
+
 .table-main--list thead :first-child :first-child {
   border-top-left-radius: 0.5rem;
 }
@@ -129,50 +134,18 @@
 
 /* Id input */
 .table-main--list tbody tr :nth-child(1) {
-  width: 3%;
   text-align: right;
-}
-
-/* First Name input */
-.table-main--list tbody tr :nth-child(2),
-  /* Last Name input */
-  .table-main--list tbody tr :nth-child(3) {
-  width: 7%;
 }
 
 /* Birth Date input */
 .table-main--list tbody tr :nth-child(4),
-  /* Start Date input */
-  .table-main--list tbody tr :nth-child(9) {
-  width: 6%;
-  text-align: center;
-}
-
-/* Street input */
-.table-main--list tbody tr :nth-child(5) {
-  width: 13%;
-}
-
-/* City input */
-.table-main--list tbody tr :nth-child(6) {
-  width: 9%;
-}
-
 /* State input */
-.table-main--list tbody tr :nth-child(7) {
-  width: 4%;
-  text-align: center;
-}
-
+.table-main--list tbody tr :nth-child(7),
 /* Zip Code */
-.table-main--list tbody tr :nth-child(8) {
-  width: 5%;
+.table-main--list tbody tr :nth-child(8),
+/* Start Date input */
+.table-main--list tbody tr :nth-child(9) {
   text-align: center;
-}
-
-/* Department */
-.table-main--list tbody tr :nth-child(10) {
-  width: 13%;
 }
 
 .table-main--list td {
