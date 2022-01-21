@@ -20,11 +20,11 @@ export default function Home() {
     });
 
     // HANDLING MIN / MAX AGE FOR DATE OF BIRTH INPUT
-    const age = (old) => {
-      let now = new Date();
-      now.setFullYear(now.getFullYear() - old);
-      now = now.toISOString().split('T')[0];
-      return now;
+    const age = (n) => {
+      let current = new Date();
+      current.setFullYear(current.getFullYear() - n);
+      current = current.toISOString().split('T')[0];
+      return current;
     };
 
     // SETTING DATE OF BIRTH MIN / MAX ATTRIBUTES
@@ -36,11 +36,11 @@ export default function Home() {
     });
 
     // HANDLING MIN / MAX DATE FOR START DATE INPUT
-    const start = (date) => {
-      let now = new Date();
-      now.setDate(now.getDate() - date);
-      now = now.toISOString().split('T')[0];
-      return now;
+    const start = (n) => {
+      let current = new Date();
+      current.setDate(current.getDate() - n);
+      current = current.toISOString().split('T')[0];
+      return current;
     };
 
     // SETTING START DATE MIN / MAX ATTRIBUTES
