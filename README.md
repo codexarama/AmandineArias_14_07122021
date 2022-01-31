@@ -3,7 +3,7 @@
     Projet fictif de formation n°11/11 | OpenClassrooms
     
 
-![Add an employee](./WealthHealth_1.png)
+<kbd>![Add an employee](./WealthHealth_1.png)</kbd>
 
 > PROBLEMATIQUE
 
