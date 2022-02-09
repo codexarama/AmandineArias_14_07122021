@@ -1,70 +1,87 @@
 /* NAVBAR */
 nav {
-    background: var(--light);
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    flex: 1;
-  }
+  background: var(--light);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
 
-  .nav-item {
-    display: inline-flex;
-    justify-content: flex-end;
-  }
+.nav-item {
+  display: inline-flex;
+  justify-content: flex-end;
+}
 
-  .nav-brand {
-    padding: 1rem;
-  }
+.nav-brand {
+  padding: 1rem;
+}
 
-  .nav-logo--design {
-    width: 40px;
-    height: 40px;
-  }
+.nav-logo--design {
+  width: 40px;
+  height: 40px;
+}
 
-  .nav-logo--brand {
-    width: 240px;
-    height: 40px;
+.nav-logo--brand {
+  width: 240px;
+  height: 40px;
+}
+
+.nav-menu {
+  width: 450px;
+}
+
+.nav-menu--title {
+  margin: 0;
+  padding: 1.2rem;
+}
+
+.nav-menu--choice {
+  width: 90px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
+  color: var(--primary);
+}
+
+.nav-menu--choice:hover,
+.nav-menu--choice:focus {
+  background: var(--primary);
+  color: var(--tertiary);
+  outline: none;
+}
+
+.active {
+  display: none;
+}
+
+.nav-ico {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.nav-shadow {
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  background-color: var(--tertiary);
+}
+
+/* ADAPTATIVE */
+@media screen and (max-width: 768px) {
+  nav {
+    width: unset;
+    display: flex;
+    flex-direction: column;
   }
 
   .nav-menu {
-    width: 450px;
+    width: unset;
   }
 
-  .nav-menu--title {
-    margin: 0;
-    padding: 1.2rem;
+  .nav-item {
+    justify-content: center;
   }
-
-  .nav-menu--choice {
-    width: 90px;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 1rem;
-    color: var(--primary);
-  }
-
-  .nav-menu--choice:hover,
-  .nav-menu--choice:focus {
-    background: var(--primary);
-    color: var(--tertiary);
-    outline: none;
-  }
-
-  .active {
-    display: none;
-    }
-
-  .nav-ico {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-  }
-
-  .nav-shadow {
-    height: 1px;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    background-color: var(--tertiary);
-  }
+}

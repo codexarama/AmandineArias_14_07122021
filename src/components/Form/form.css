@@ -156,3 +156,23 @@ select {
   box-shadow: 0 0 0 2px var(--light), 0 0 0 4px var(--close) !important;
   border-radius: 100px;
 }
+
+/* ADAPTATIVE */
+@media screen and (max-width: 1260px) {
+  .table-main--sorter {
+    padding-left: 0;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  /* FORM */
+  .form-newEmployee--addressContainer select {
+    font-size: small;
+  }
+
+  .form-newEmployee--inputWrapper select option,
+  .form-newEmployee--addressContainer option {
+    font-size: x-small;
+  }
+}
